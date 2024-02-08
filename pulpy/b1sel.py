@@ -4,7 +4,7 @@
 """
 import numpy as np
 
-from pulpy.slr import slr as slr
+import pulpy.slr as slr
 from pulpy.util import dinf
 
 __all__ = ["dz_b1_rf", "dz_b1_gslider_rf", "dz_b1_hadamard_rf"]
