@@ -4,13 +4,14 @@
 """
 
 import numpy as np
+from scipy.interpolate import CubicSpline
 
 __all__ = ["flatten_bsse"]
 
 
 def flatten_bsse(rfin, dtin, dtout=None):
     
-    """Convert a Bloch-Siegert Selective Excitation pulse to have flat-amplitude.
+    """Convert a Bloch-Siegert Selective Excitation (BSSE) pulse to have flat-amplitude.
 
     Args:
         rfin (complex vector): input BSSE RF samples 
