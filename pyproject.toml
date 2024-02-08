@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>61.0", "setuptools-scm"]
+build-backend ="setuptools.build_meta"
+
+[project]
+name = "pulpy"
+version = "0.0.1"
+description = "Pulses in Python - a Python package for RF pulse design for MRI/NMR." 
+authors = [
+    {name = "Jonathan Martin", email = "jonathan.bach.martin@vumc.org"},
+]    
+license = {text = "BSD"}
+dependencies = [
+    "numpy",
+    "pywavelets", 
+    "numba", 
+    "scipy", 
+    "tqdm"
+]
+classifiers=[
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+     "Operating System :: OS Independent",
+]
+dynamic = [
+    "version",
+    "readme"
+]
+readme = ["README.md"]
+requires-python = ">=3.8"
+
+[project.optional-dependencies]
+test = [
+    "pytest < 5.0.0",
+    "pytest-cov[all]",
+    "coverage"
+]
+lint = [
+    "ruff",
+    "black",
+    "isort",
+    "sphinx",
+    "sphinx_rtd_theme"
+] 
+
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
+
+[project.urls]
+Homepage = "https://github.com/jonbmartin/pulpy"
