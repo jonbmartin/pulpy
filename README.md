@@ -1,5 +1,5 @@
 # PulPy - Pulses in Python
-![alt text](docs/figures/pulpy_logo.png){ width: 200px; }
+<img src="docs/figures/pulpy_logo.png" width="200">
 
 ## Description
 TODO: this is a placeholder 
