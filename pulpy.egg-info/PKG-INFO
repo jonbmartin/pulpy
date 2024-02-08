@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: pulpy
+Version: 0.0.1
+Summary: PulPy-Pulses in Python. A package for MRI/NMR RF pulse design
+Author-email: Jonathan Martin <jonathan.bach.martin@vumc.org>
+Project-URL: Homepage, https://github.com/jonbmartin/pulpy
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# PulPy - Pulses in Python
+
+## Description
+TODO: this is a placeholder 
+
+A brief description of what this project does and who it's for.
+
+## Installation
+TODO: this is a placeholder
+
+Provide step by step series of examples and explanations about how to get a development environment running.
+
+```bash
+git clone <repository>
+cd <repository>
+npm install
