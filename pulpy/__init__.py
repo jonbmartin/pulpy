@@ -18,6 +18,7 @@ from pulpy import (
     slr,
     trajgrad,
     util,
+    verse,
 )
 from pulpy.adiabatic import *  # noqa
 from pulpy.b1sel import *  # noqa
@@ -30,6 +31,7 @@ from pulpy.shim import *  # noqa
 from pulpy.sim import *  # noqa
 from pulpy.slr import *  # noqa
 from pulpy.trajgrad import *  # noqa
+from pulpy.util import *  # noqa
 from pulpy.util import *  # noqa
 
 __all__ = ["linop"]
@@ -44,3 +46,4 @@ __all__.extend(shim.__all__)
 __all__.extend(slr.__all__)
 __all__.extend(trajgrad.__all__)
 __all__.extend(util.__all__)
+__all__.extend(verse.__all__)
