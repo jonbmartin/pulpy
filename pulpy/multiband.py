@@ -4,7 +4,7 @@
 
 import numpy as np
 
-from pulpy.slr import slr as slr
+import pulpy.slr as slr
 from pulpy.trajgrad import trap_grad
 
 __all__ = ["mb_phs_tab", "mb_rf", "dz_pins"]
