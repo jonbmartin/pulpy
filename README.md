@@ -1,5 +1,7 @@
 # PulPy - Pulses in Python
 
+[![Upload Python Package](https://github.com/jonbmartin/pulpy/actions/workflows/python-publish.yml/badge.svg)](https://github.com/jonbmartin/pulpy/actions/workflows/python-publish.yml)
+
 ## Description
 TODO: this is a placeholder 
 
