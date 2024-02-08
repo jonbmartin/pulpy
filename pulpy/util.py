@@ -23,7 +23,7 @@ def b12wbs(bs_offset, b1):
     """
 
     gam = 4258
-    rfp_modulation = bs_offset * ((1 + (gam * b1) ** 2 / bs_offset ** 2) ** (1 / 2) - 1)
+    rfp_modulation = bs_offset * ((1 + (gam * b1) ** 2 / bs_offset**2) ** (1 / 2) - 1)
 
     return rfp_modulation
 
@@ -48,11 +48,11 @@ def calc_kbs(b1, wrf, T):
     b1 = np.squeeze(b1)
     wrf = np.squeeze(wrf)
 
-    gam = 42.5657*2*np.pi*10**6  # rad/T
+    gam = 42.5657 * 2 * np.pi * 10**6  # rad/T
     t = np.linspace(0, T, np.size(b1))
 
-    kbs = np.trapz(((gam*b1)**2/((2*np.pi*wrf)*2)),t)
-    kbs /= (10000*10000)  # want out rad/G**2
+    kbs = np.trapz(((gam * b1) ** 2 / ((2 * np.pi * wrf) * 2)), t)
+    kbs /= 10000 * 10000  # want out rad/G**2
 
     return kbs
 
