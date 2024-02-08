@@ -13,6 +13,7 @@ on:
     types: [published]
 
 permissions:
+  id-token: write  # IMPORTANT : this permission is mandatory for trusted publishing
   contents: read
 
 jobs:

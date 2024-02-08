@@ -1,5 +1,8 @@
 # PulPy - Pulses in Python
 
+![alt text](docs/figures/pulpy_logo.png)
+
+
 ## Description
 TODO: this is a placeholder 
 
