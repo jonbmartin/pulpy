@@ -105,7 +105,7 @@ def dz_bssel_rf(
 
     # repeat design for multiple bands of excitation
     else:
-        rfp = np.zeros((1, np.int(np.ceil(Tex / dt / 2) * 2)), dtype=complex)
+        rfp = np.zeros((1, int(np.ceil(Tex / dt / 2) * 2)), dtype=complex)
         for ii in range(0, len(pbc)):
             upper_b1 = pbc[ii] + pbw / 2
             lower_b1 = pbc[ii] - pbw / 2
@@ -141,7 +141,7 @@ def dz_bssel_rf(
 
     # zero-pad it to the same length as bs
     nsw = int(np.ceil((np.size(bsrf) - np.size(rfp)) / 2))
-    rfp = np.concatenate([np.zeros((1, np.int(nsw))), rfp], axis=1)
+    rfp = np.concatenate([np.zeros((1, int(nsw))), rfp], axis=1)
     rfp = np.concatenate([rfp, np.zeros((1, np.size(bsrf) - np.size(rfp)))], axis=1)
 
     # return the subpulses. User should superimpose bsrf and rfp if desired
@@ -230,7 +230,7 @@ def bssel_ex_slr(
     bs_offset=20000,
     fa_correct=True,
 ):
-    n = np.int(np.ceil(T / dt / 2) * 2)  # samples in final pulse, force even
+    n = int(np.ceil(T / dt / 2) * 2)  # samples in final pulse, force even
 
     if not rampfilt:
         # straightforward SLR design, no ramp
@@ -281,7 +281,7 @@ def bssel_ex_slr(
         rfp = rfp / pbc
 
     # modulate RF to be centered at the passband. complex modulation => 1 band!
-    t = np.linspace(-np.int(T / dt / 2), np.int(T / dt / 2), np.size(rfp))
+    t = np.linspace(-int(T / dt / 2), int(T / dt / 2), np.size(rfp))
     rfp = rfp * np.exp(-1j * 2 * np.pi * rfp_modulation * t * dt)
 
     phi_bs = np.cumsum((4258 * np.real(rfp)) ** 2 / (2 * rfp_modulation))
