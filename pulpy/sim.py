@@ -262,8 +262,6 @@ def abrm_ptx(b1, x, g, dt, fmap=None, sens=None):
         m += mxy0 * xp.conj(statea) ** 2
         m -= xp.conj(mxy0) * (stateb**2)
         mz = mz0 * (statea * xp.conj(statea) - stateb * xp.conj(stateb))
-        mz += 2 * xp.real(
-            mxy0 * xp.conj(statea) * xp.negative(xp.conj(stateb))
-        )
+        mz += 2 * xp.real(mxy0 * xp.conj(statea) * xp.negative(xp.conj(stateb)))
 
         return a, b, m, mz

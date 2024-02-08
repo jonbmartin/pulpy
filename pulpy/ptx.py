@@ -4,13 +4,13 @@
 """
 
 import numpy as np
-from scipy.interpolate import interp1d
-
 import sigpy as sp
+from scipy.interpolate import interp1d
 from sigpy import backend
+
 from pulpy.linop import *
-from pulpy.trajgrad import spokes_grad, min_trap_grad
 from pulpy.slr import dzrf
+from pulpy.trajgrad import min_trap_grad, spokes_grad
 
 __all__ = ["stspa", "stspk"]
 
@@ -130,9 +130,7 @@ def stspa(
         # perform the design: apply optimization method to find solution pulse
         while not alg_method.done():
             # phase_update switch
-            if (alg_method.iter > 0) and (
-                alg_method.iter % phase_update_interval == 0
-            ):
+            if (alg_method.iter > 0) and (alg_method.iter % phase_update_interval == 0):
                 target = xp.abs(target) * xp.exp(
                     1j * xp.angle(xp.reshape(A * alg_method.x, target.shape))
                 )
@@ -220,9 +218,7 @@ def stspk(
 
         for ii in range(n_spokes):
             # build Afull (and take only 0 locations into matrix)
-            Anum = PtxSpatialExplicit(
-                sens, k, gts, mask.shape, ret_array=True
-            )
+            Anum = PtxSpatialExplicit(sens, k, gts, mask.shape, ret_array=True)
             Anum = Anum[~(Anum == 0).all(1)]
 
             # design wfull using MLS:
@@ -243,9 +239,7 @@ def stspk(
                     (Anum.conj().T @ xp.exp(1j * phs)),
                 )
                 err = Anum @ w_full - xp.exp(1j * phs)
-                cost = xp.real(
-                    err.conj().T @ err + alpha * w_full.conj().T @ w_full
-                )
+                cost = xp.real(err.conj().T @ err + alpha * w_full.conj().T @ w_full)
 
             # add a spoke using greedy method
             if ii < n_spokes - 1:
@@ -258,9 +252,7 @@ def stspk(
                     )
                     Anum = Anum[~(Anum == 0).all(1)]
 
-                    rfm = xp.linalg.solve(
-                        (Anum.conj().T @ Anum), (Anum.conj().T @ r)
-                    )
+                    rfm = xp.linalg.solve((Anum.conj().T @ Anum), (Anum.conj().T @ r))
                     rfnorm[jj] = xp.linalg.norm(rfm)
 
                 ind = xp.argmax(rfnorm)
@@ -289,9 +281,7 @@ def stspk(
 
         n_plat = subgz.size - 2 * nramp  # time points on trap plateau
         # interpolate to stretch out waveform to appropriate length
-        f = interp1d(
-            np.arange(0, npts, 1) / npts, subrf, fill_value="extrapolate"
-        )
+        f = interp1d(np.arange(0, npts, 1) / npts, subrf, fill_value="extrapolate")
         subrf = f(xp.arange(0, n_plat, 1) / n_plat)
         subrf = xp.concatenate((xp.zeros(nramp), subrf, xp.zeros(nramp)))
 

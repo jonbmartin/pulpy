@@ -45,9 +45,7 @@ def bir4(n, beta, kappa, theta, dw0):
 
     om1 = dw0 * np.tan(kappa * 4 * t[: n // 4]) / np.tan(kappa)
     om2 = dw0 * np.tan(kappa * (4 * t[n // 4 : n // 2] - 2)) / np.tan(kappa)
-    om3 = (
-        dw0 * np.tan(kappa * (4 * t[n // 2 : 3 * n // 4] - 2)) / np.tan(kappa)
-    )
+    om3 = dw0 * np.tan(kappa * (4 * t[n // 2 : 3 * n // 4] - 2)) / np.tan(kappa)
     om4 = dw0 * np.tan(kappa * (4 * t[3 * n // 4 :] - 4)) / np.tan(kappa)
 
     om = np.concatenate((om1, om2, om3, om4))
@@ -118,9 +116,7 @@ def wurst(n=512, n_fac=40, bw=40e3, dur=2e-3):
     return a, om
 
 
-def goia_wurst(
-    n=512, dur=3.5e-3, f=0.9, n_b1=16, m_grad=4, b1_max=817, bw=20000
-):
+def goia_wurst(n=512, dur=3.5e-3, f=0.9, n_b1=16, m_grad=4, b1_max=817, bw=20000):
     r"""Design a GOIA (gradient offset independent adiabaticity) WURST
      inversion pulse
 
@@ -159,9 +155,7 @@ def goia_wurst(
     return a, om, g
 
 
-def bloch_siegert_fm(
-    n=512, dur=2e-3, b1p=20.0, k=42.0, gamma=2 * np.pi * 42.58
-):
+def bloch_siegert_fm(n=512, dur=2e-3, b1p=20.0, k=42.0, gamma=2 * np.pi * 42.58):
     r"""
     U-shaped FM waveform for adiabatic Bloch-Siegert :math:`B_1^{+}` mapping
     and spatial encoding.

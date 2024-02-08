@@ -1,4 +1,3 @@
-
 """The core module contains functions and classes for RF pulse design.
 
 It contains functions to design a variety of RF pulses for MRI, such as SLR,
@@ -7,19 +6,8 @@ includes other functions to assist with pulse design, such as I/O functions,
 trajectory/gradient designers, and Bloch simulators.
 
 """
-from pulpy import (
-    adiabatic,
-    b1sel,
-    io,
-    multiband,
-    optcont,
-    ptx,
-    shim,
-    sim,
-    slr,
-    trajgrad,
-    util,
-)
+from pulpy import (adiabatic, b1sel, io, multiband, optcont, ptx, shim, sim,
+                   slr, trajgrad, util)
 from pulpy.adiabatic import *  # noqa
 from pulpy.b1sel import *  # noqa
 from pulpy.io import *  # noqa

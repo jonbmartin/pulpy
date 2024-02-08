@@ -3,9 +3,9 @@
 """
 
 import numpy as np
-
 import sigpy as sp
 from sigpy import backend
+
 from pulpy.linop import *
 
 __all__ = ["calc_shims", "init_optimal_spectral", "init_circ_polar"]

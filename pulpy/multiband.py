@@ -2,9 +2,10 @@
 """Multiband RF Pulse Design functions.
 """
 
+import numpy as np
+
 from pulpy.slr import slr as slr
 from pulpy.trajgrad import trap_grad
-import numpy as np
 
 __all__ = ["mb_phs_tab", "mb_rf", "dz_pins"]
 
@@ -73,9 +74,7 @@ def mb_phs_tab(n_bands, phs_type="phs_mod"):
         p[3, 1:6] = np.array([2.005, 1.674, 5.012, 5.736, 4.123])
         p[4, 1:7] = np.array([3.002, 5.998, 5.909, 2.624, 2.528, 2.440])
         p[5, 1:8] = np.array([1.036, 3.414, 3.778, 3.215, 1.756, 4.555, 2.467])
-        p[6, 1:9] = np.array(
-            [1.250, 1.783, 3.558, 0.739, 3.319, 1.296, 0.521, 5.332]
-        )
+        p[6, 1:9] = np.array([1.250, 1.783, 3.558, 0.739, 3.319, 1.296, 0.521, 5.332])
         p[7, 1:10] = np.array(
             [4.418, 2.360, 0.677, 2.253, 3.472, 3.040, 3.974, 1.192, 2.510]
         )

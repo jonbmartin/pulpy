@@ -2,12 +2,12 @@ import unittest
 
 import numpy as np
 import numpy.testing as npt
+import sigpy as sp
 from scipy.ndimage import gaussian_filter
 
-import sigpy as sp
 import pulpy.linop as linop
-import pulpy.sim as sim
 import pulpy.ptx as ptx
+import pulpy.sim as sim
 import pulpy.trajgrad as trajgrad
 
 if __name__ == "__main__":
@@ -121,9 +121,7 @@ class TestPtx(unittest.TestCase):
         g, k1, t, s = trajgrad.spiral_arch(0.24, dim, 4e-6, 200, 0.035)
         k1 = k1 / dim
 
-        A = linop.PtxSpatialExplicit(
-            sens, k1, dt=4e-6, img_shape=target.shape, b0=None
-        )
+        A = linop.PtxSpatialExplicit(sens, k1, dt=4e-6, img_shape=target.shape, b0=None)
         pulses = ptx.stspa(
             target,
             sens,
@@ -148,9 +146,7 @@ class TestPtx(unittest.TestCase):
         k1 = k1 / dim
 
         k1 = trajgrad.stack_of(k1, nz, 0.1)
-        A = linop.PtxSpatialExplicit(
-            sens, k1, dt=4e-6, img_shape=target.shape, b0=None
-        )
+        A = linop.PtxSpatialExplicit(sens, k1, dt=4e-6, img_shape=target.shape, b0=None)
 
         pulses = ptx.stspa(
             target,
@@ -176,9 +172,7 @@ class TestPtx(unittest.TestCase):
         k1 = k1 / dim
 
         k1 = trajgrad.stack_of(k1, nz, 0.1)
-        A = sp.mri.linop.Sense(
-            sens, k1, weights=None, tseg=None, ishape=target.shape
-        ).H
+        A = sp.mri.linop.Sense(sens, k1, weights=None, tseg=None, ishape=target.shape).H
 
         pulses = ptx.stspa(
             target,

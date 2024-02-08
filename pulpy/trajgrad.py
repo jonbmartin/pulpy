@@ -58,12 +58,8 @@ def min_trap_grad(area, gmax, dgdt, dt):
 
         # make attack and decay ramps
         ramppts = int(np.ceil(np.max(flat) / dgdt / dt))
-        ramp_up = (
-            np.linspace(0, ramppts, num=ramppts + 1) / ramppts * np.max(flat)
-        )
-        ramp_dn = (
-            np.linspace(ramppts, 0, num=ramppts + 1) / ramppts * np.max(flat)
-        )
+        ramp_up = np.linspace(0, ramppts, num=ramppts + 1) / ramppts * np.max(flat)
+        ramp_dn = np.linspace(ramppts, 0, num=ramppts + 1) / ramppts * np.max(flat)
 
         trap = np.concatenate((ramp_up, np.squeeze(flat), ramp_dn))
 
@@ -126,12 +122,8 @@ def trap_grad(area, gmax, dgdt, dt, *args):
 
             # make attack and decay ramps
             ramppts = int(np.ceil(np.max(flat) / dgdt / dt))
-            ramp_up = (
-                np.linspace(0, ramppts, num=ramppts + 1) / ramppts * flat_top
-            )
-            ramp_dn = (
-                np.linspace(ramppts, 0, num=ramppts + 1) / ramppts * flat_top
-            )
+            ramp_up = np.linspace(0, ramppts, num=ramppts + 1) / ramppts * flat_top
+            ramp_dn = np.linspace(ramppts, 0, num=ramppts + 1) / ramppts * flat_top
             trap = np.concatenate((ramp_up, flat, ramp_dn))
 
     else:
@@ -140,9 +132,7 @@ def trap_grad(area, gmax, dgdt, dt, *args):
     return np.expand_dims(trap, axis=0), ramppts
 
 
-def spiral_varden(
-    fov, res, gts, gslew, gamp, densamp, dentrans, nl, rewinder=False
-):
+def spiral_varden(fov, res, gts, gslew, gamp, densamp, dentrans, nl, rewinder=False):
     r"""Variable density spiral designer. Produces trajectory, gradients,
     and slew rate. Gradient units returned are in g/cm, g/cm/s
 
@@ -449,6 +439,7 @@ def spiral_arch(fov, res, gts, gslew, gamp):
 
     return g, k, t, s
 
+
 def spiral_k(fov, N, f_sampling, R, ninterleaves, alpha, gm, sm, gamma=2.678e8):
     """Generate variable density spiral trajectory ONLY. No gradient included.
 
@@ -479,10 +470,7 @@ def spiral_k(fov, N, f_sampling, R, ninterleaves, alpha, gm, sm, gamma=2.678e8):
     Tea = lam * w / gamma / gm / (alpha + 1)  # in s
     Tes = np.sqrt(lam * w**2 / sm / gamma) / (alpha / 2 + 1)  # in s
     Ts2a = (
-        Tes ** ((alpha + 1) / (alpha / 2 + 1))
-        * (alpha / 2 + 1)
-        / Tea
-        / (alpha + 1)
+        Tes ** ((alpha + 1) / (alpha / 2 + 1)) * (alpha / 2 + 1) / Tea / (alpha + 1)
     ) ** (
         1 + 2 / alpha
     )  # in s
@@ -491,17 +479,9 @@ def spiral_k(fov, N, f_sampling, R, ninterleaves, alpha, gm, sm, gamma=2.678e8):
         tautrans = (Ts2a / Tes) ** (1 / (alpha / 2 + 1))
 
         def tau(t):
-            return (t / Tes) ** (1 / (alpha / 2 + 1)) * (0 <= t) * (
-                t <= Ts2a
-            ) + ((t - Ts2a) / Tea + tautrans ** (alpha + 1)) ** (
-                1 / (alpha + 1)
-            ) * (
-                t > Ts2a
-            ) * (
-                t <= Tea
-            ) * (
-                Tes >= Ts2a
-            )
+            return (t / Tes) ** (1 / (alpha / 2 + 1)) * (0 <= t) * (t <= Ts2a) + (
+                (t - Ts2a) / Tea + tautrans ** (alpha + 1)
+            ) ** (1 / (alpha + 1)) * (t > Ts2a) * (t <= Tea) * (Tes >= Ts2a)
 
         Tend = Tea
     else:
@@ -615,9 +595,7 @@ def epi(fov, n, etl, dt, gamp, gslew, offset=0, dirx=-1, diry=1):
     # changed readout patterns to create interleaved EPIs
     areagyblip = areapd / etl
     gyblip = trap_grad(areagyblip, gamp, gslew / scaley * 1000, dt)[0]
-    gyro = np.concatenate(
-        (np.zeros((1, gxro.size - gyblip.size)), gyblip), axis=1
-    )
+    gyro = np.concatenate((np.zeros((1, gxro.size - gyblip.size)), gyblip), axis=1)
     gyro2 = np.expand_dims(np.array([0]), axis=1)
 
     # put together gx and gy
@@ -855,9 +833,7 @@ def traj_array_to_complex(k):
 
 
 @nb.jit(nopython=True, cache=True)  # pragma: no cover
-def runge_kutta(
-    ds: float, st: float, kvals: np.ndarray, smax=None, gamma=4.257
-):
+def runge_kutta(ds: float, st: float, kvals: np.ndarray, smax=None, gamma=4.257):
     r"""Runge-Kutta 4 for curve constrained
 
     Args:
@@ -875,16 +851,12 @@ def runge_kutta(
         return None
     k1 = ds / st * math.sqrt(temp)
 
-    temp = (
-        gamma**2 * smax**2 - abs(kvals[1]) ** 2 * (st + ds * k1 / 2) ** 4
-    )
+    temp = gamma**2 * smax**2 - abs(kvals[1]) ** 2 * (st + ds * k1 / 2) ** 4
     if temp < 0.0:
         return None
     k2 = ds / (st + ds * k1 / 2) * math.sqrt(temp)
 
-    temp = (
-        gamma**2 * smax**2 - abs(kvals[1]) ** 2 * (st + ds * k2 / 2) ** 4
-    )
+    temp = gamma**2 * smax**2 - abs(kvals[1]) ** 2 * (st + ds * k2 / 2) ** 4
     if temp < 0.0:
         return None
     k3 = ds / (st + ds * k2 / 2) * math.sqrt(temp)
@@ -936,9 +908,7 @@ def min_time_gradient(
         Imaging. 2008;27(6):866-873. doi:10.1109/TMI.2008.922699
     """
 
-    def sdotmax(
-        cs: interpolate.CubicSpline, s: np.ndarray, gmax, smax, gamma=4.257
-    ):
+    def sdotmax(cs: interpolate.CubicSpline, s: np.ndarray, gmax, smax, gamma=4.257):
         # [sdot, k, ] = sdotMax(PP, p_of_s, s, gmax, smax)
         #
         # Given a k-space curve C (in [1/cm] units), maximum gradient amplitude

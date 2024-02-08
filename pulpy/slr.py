@@ -6,8 +6,8 @@
 import numpy as np
 import scipy.linalg as linalg
 import scipy.signal as signal
-
 import sigpy as sp
+
 from pulpy.util import dinf
 
 __all__ = [
@@ -195,18 +195,14 @@ def dzlp(n=64, tb=4, d1=0.01, d2=0.01):
 
 def msinc(n=64, m=1):
     x = np.arange(-n / 2, n / 2, 1) / (n / 2)
-    snc = np.divide(
-        np.sin(m * 2 * np.pi * x + 0.00001), (m * 2 * np.pi * x + 0.00001)
-    )
+    snc = np.divide(np.sin(m * 2 * np.pi * x + 0.00001), (m * 2 * np.pi * x + 0.00001))
     ms = np.multiply(snc, 0.54 + 0.46 * np.cos(np.pi * x))
     ms = ms * 4 * m / n
 
     return ms
 
 
-def dz_gslider_b(
-    n=128, g=5, gind=1, tb=4, d1=0.01, d2=0.01, phi=np.pi, shift=32
-):
+def dz_gslider_b(n=128, g=5, gind=1, tb=4, d1=0.01, d2=0.01, phi=np.pi, shift=32):
     r"""Design a g-slider pulse b
 
     Args:
@@ -264,9 +260,7 @@ def dz_gslider_b(
                 * 2
                 * np.pi
                 / (2 * (n + 1))
-                * np.concatenate(
-                    [np.arange(0, n / 2 + 1, 1), np.arange(-n / 2, 0, 1)]
-                )
+                * np.concatenate([np.arange(0, n / 2 + 1, 1), np.arange(-n / 2, 0, 1)])
             )
             b = sp.ifft(np.multiply(sp.fft(b, center=False), c), center=False)
             # lop off extra sample
@@ -339,23 +333,17 @@ def dz_gslider_b(
             * 2
             * np.pi
             / (2 * (n + 1))
-            * np.concatenate(
-                [np.arange(0, n / 2 + 1, 1), np.arange(-n / 2, 0, 1)]
-            )
+            * np.concatenate([np.arange(0, n / 2 + 1, 1), np.arange(-n / 2, 0, 1)])
         )
 
         b_notch = signal.firls(n + 1, f, m_notch, w)  # the notched filter
-        b_notch = sp.ifft(
-            np.multiply(sp.fft(b_notch, center=False), c), center=False
-        )
+        b_notch = sp.ifft(np.multiply(sp.fft(b_notch, center=False), c), center=False)
         b_notch = np.real(b_notch[:n])
         # hilbert transform to suppress negative passband
         b_notch = signal.hilbert(b_notch)
 
         b_sub = signal.firls(n + 1, f, m_sub, w)  # the sub-band filter
-        b_sub = sp.ifft(
-            np.multiply(sp.fft(b_sub, center=False), c), center=False
-        )
+        b_sub = sp.ifft(np.multiply(sp.fft(b_sub, center=False), c), center=False)
 
         b_sub = np.real(b_sub[:n])
         # hilbert transform to suppress negative passband
@@ -456,17 +444,13 @@ def dz_hadamard_b(n=128, g=5, gind=1, tb=4, d1=0.01, d2=0.01, shift=32):
             * 2
             * np.pi
             / (2 * (n + 1))
-            * np.concatenate(
-                [np.arange(0, n / 2 + 1, 1), np.arange(-n / 2, 0, 1)]
-            )
+            * np.concatenate([np.arange(0, n / 2 + 1, 1), np.arange(-n / 2, 0, 1)])
         )
         bp = signal.firls(n + 1, f, mp, w)  # the positive filter
         bn = signal.firls(n + 1, f, mn, w)  # the negative filter
 
         # combine the filters and demodulate
-        b = sp.ifft(
-            np.multiply(sp.fft(bp - bn, center=False), c), center=False
-        )
+        b = sp.ifft(np.multiply(sp.fft(bp - bn, center=False), c), center=False)
 
         b = np.real(b[:n])
         # hilbert transform to suppress negative passband
@@ -526,8 +510,7 @@ def b2rf(b, cancel_alpha_phs=False):
     a = b2a(b)
     if cancel_alpha_phs:
         b_a_phase = sp.fft(b, center=False, norm=None) * np.exp(
-            -1j
-            * np.angle(sp.fft(a[np.size(a) :: -1], center=False, norm=None))
+            -1j * np.angle(sp.fft(a[np.size(a) :: -1], center=False, norm=None))
         )
         b = sp.ifft(b_a_phase, center=False, norm=None)
     rf = ab2rf(a, b)
@@ -559,9 +542,7 @@ def mag2mp(x):
     xlf = sp.fft(xl, center=False, norm=None)
     xlfp = xlf
     xlfp[0] = xlf[0]  # Keep DC the same
-    xlfp[1 : (n // 2) : 1] = (
-        2 * xlf[1 : (n // 2) : 1]
-    )  # Double positive frequencies
+    xlfp[1 : (n // 2) : 1] = 2 * xlf[1 : (n // 2) : 1]  # Double positive frequencies
     xlfp[n // 2] = xlf[n // 2]  # keep half Nyquist the same
     xlfp[n // 2 + 1 : n : 1] = 0  # zero negative frequencies
     xlaf = sp.ifft(xlfp, center=False, norm=None)
@@ -732,9 +713,7 @@ def dz_recursive_rf(
         bref /= np.max(np.abs(bref))
         bref_mag = np.abs(bref)
         aref_mag = np.abs(np.sqrt(1 - bref_mag**2))
-        flip_ref = (
-            2 * np.arcsin(bref_mag[int(z_pad_fact * n / 2)]) * 180 / np.pi
-        )
+        flip_ref = 2 * np.arcsin(bref_mag[int(z_pad_fact * n / 2)]) * 180 / np.pi
 
     # get flip angles
     flip = np.zeros(n_seg)
@@ -745,16 +724,15 @@ def dz_recursive_rf(
             flip[jj] = flip[jj] * 180 / np.pi  # deg
         else:
             flip[jj] = np.arctan(
-                np.cos(flip_ref * np.pi / 180)
-                * np.sin(flip[jj + 1] * np.pi / 180)
+                np.cos(flip_ref * np.pi / 180) * np.sin(flip[jj + 1] * np.pi / 180)
             )
             flip[jj] = flip[jj] * 180 / np.pi  # deg
 
     # design first RF pulse
     b = np.zeros((int(z_pad_fact * n), n_seg), dtype=complex)
-    b[
-        int(z_pad_fact * n / 2 - n / 2) : int(z_pad_fact * n / 2 + n / 2), 0
-    ] = dzls(n, tb, d1, d2)
+    b[int(z_pad_fact * n / 2 - n / 2) : int(z_pad_fact * n / 2 + n / 2), 0] = dzls(
+        n, tb, d1, d2
+    )
     # b = np.concatenate((np.zeros(int(zPadFact*N/2-N/2)), b,
     #    np.zeros(int(zPadFact*N/2-N/2))))
     B = sp.fft(b[:, 0], norm=None)
@@ -776,8 +754,7 @@ def dz_recursive_rf(
         # cancel a phase by absorbing into b
         # Note that this is the only time we need to do it
         b_a_phase = sp.fft(b[:, 0], center=False, norm=None) * np.exp(
-            -1j
-            * np.angle(sp.fft(a[np.size(a) :: -1], center=False, norm=None))
+            -1j * np.angle(sp.fft(a[np.size(a) :: -1], center=False, norm=None))
         )
         b[:, 0] = sp.ifft(b_a_phase, center=False, norm=None)
     rf[:, 0] = b2rf(b[:, 0])
@@ -833,9 +810,7 @@ def dz_recursive_rf(
                 1 - np.exp(-tr_seg / t1)
             )
         else:
-            mz = mz * (
-                1 - 2 * (np.abs(A * bref_mag) ** 2 + np.abs(aref_mag * B) ** 2)
-            )
+            mz = mz * (1 - 2 * (np.abs(A * bref_mag) ** 2 + np.abs(aref_mag * B) ** 2))
             # (second term is about 1%)
 
         if use_mz is True:  # design the pulses accounting for the
@@ -848,9 +823,7 @@ def dz_recursive_rf(
             else:
                 bq = 4 * (bref_mag**4) * mz**2
                 aq = -4 * (bref_mag**4) * mz**2
-            bmag = np.sqrt(
-                (-bq + np.real(np.sqrt(bq**2 - 4 * aq * cq))) / (2 * aq)
-            )
+            bmag = np.sqrt((-bq + np.real(np.sqrt(bq**2 - 4 * aq * cq))) / (2 * aq))
             bmag[np.isnan(bmag)] = 0
             # get A - easier to get complex A than complex B since |A| is
             # determined by |B|, and phase is gotten by min-phase relationship

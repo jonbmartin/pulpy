@@ -109,9 +109,7 @@ def PtxSpatialExplicit(sens, coord, dt, img_shape, b0=None, ret_array=False):
             else:
                 tmp = sens[ii, :, :].flatten()
             D = xp.transpose(xp.tile(tmp, [coord.shape[0], 1]))
-            AFullExplicit = xp.concatenate(
-                (AFullExplicit, D * AExplicit), axis=1
-            )
+            AFullExplicit = xp.concatenate((AFullExplicit, D * AExplicit), axis=1)
 
         # remove 1st empty AExplicit entries
         AFullExplicit = AFullExplicit[:, coord.shape[0] :]

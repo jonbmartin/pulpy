@@ -4,8 +4,8 @@ import numpy as np
 import numpy.testing as npt
 
 import pulpy.multiband as multiband
-import pulpy.slr as slr
 import pulpy.sim as sim
+import pulpy.slr as slr
 
 if __name__ == "__main__":
     unittest.main()
@@ -29,9 +29,7 @@ class TestMultiband(unittest.TestCase):
         mb_pulse = multiband.mb_rf(pulse, n_bands, band_sep, phs_type)
 
         # simulate it
-        [a, b] = sim.abrm(
-            mb_pulse, np.arange(-20 * tb, 20 * tb, 40 * tb / 2000), True
-        )
+        [a, b] = sim.abrm(mb_pulse, np.arange(-20 * tb, 20 * tb, 40 * tb / 2000), True)
         mxy = 2 * np.multiply(np.conj(a), b)
 
         pts = np.array([mxy[750], mxy[850], mxy[1000], mxy[1150], mxy[1250]])

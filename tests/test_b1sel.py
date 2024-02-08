@@ -21,9 +21,7 @@ class TestB1sel(unittest.TestCase):
         pbc = 5  # gauss, passband center
         flip = np.pi / 4  # radians, flip angle
 
-        [rf_am, rf_fm] = b1sel.dz_b1_rf(
-            dt, tb, ptype, flip, pbw, pbc, d1, d2
-        )
+        [rf_am, rf_fm] = b1sel.dz_b1_rf(dt, tb, ptype, flip, pbw, pbc, d1, d2)
         b1 = np.arange(
             0, 2 * pbc, 2 * pbc / np.size(rf_am) * 4
         )  # b1 grid we simulate the pulse over
@@ -48,9 +46,7 @@ class TestB1sel(unittest.TestCase):
         pbc = 1  # gauss, passband center
         pbw = 0.25  # passband width
         dt = 2e-6  # seconds, sampling rate
-        [om1, dom] = b1sel.dz_b1_gslider_rf(
-            dt, g, tb, ptype, flip, pbw, pbc, d1, d2
-        )
+        [om1, dom] = b1sel.dz_b1_gslider_rf(dt, g, tb, ptype, flip, pbw, pbc, d1, d2)
 
         n = np.shape(om1)[0]
         b1 = np.arange(

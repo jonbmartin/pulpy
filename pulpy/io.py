@@ -3,6 +3,7 @@
 """
 
 import struct
+
 import numpy as np
 
 __all__ = ["signa", "ge_rf_params", "philips_rf_params", "siemens_rf"]
@@ -37,9 +38,7 @@ def siemens_rf(
 
     # get the number of points in RF waveform
     npts = pulse.size
-    assert npts <= 4096, (
-        "RF pulse must have less than 4096 points for" " Siemens VB17"
-    )
+    assert npts <= 4096, "RF pulse must have less than 4096 points for" " Siemens VB17"
 
     if comment is None:
         comment = ""

@@ -3,6 +3,7 @@
 
 """
 import numpy as np
+
 from pulpy.slr import slr as slr
 from pulpy.util import dinf
 
@@ -73,18 +74,14 @@ def dz_b1_rf(
             1j
             * 2
             * np.pi
-            * np.outer(
-                np.arange(-n * os / 2, n * os / 2), np.arange(-n / 2, n / 2)
-            )
+            * np.outer(np.arange(-n * os / 2, n * os / 2), np.arange(-n / 2, n / 2))
             / (n * os)
         )
 
         # build target pattern
         ii = np.arange(-n * os / 2, n * os / 2) / (n * os) * 2
         w = dinf(d1, d2) / tb
-        f = np.asarray([0, (1 - w) * (tb / 2), (1 + w) * (tb / 2), n / 2]) / (
-            n / 2
-        )
+        f = np.asarray([0, (1 - w) * (tb / 2), (1 + w) * (tb / 2), n / 2]) / (n / 2)
         d = np.double(np.abs(ii) < f[1])
         ds = np.double(np.abs(ii) > f[2])
 
