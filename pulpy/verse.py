@@ -3,7 +3,10 @@
 
 """
 
+import numpy as np
+
 __all__ = ["flatten_bsse"]
+
 
 def flatten_bsse(rfin, dtin, dtout=None):
     
