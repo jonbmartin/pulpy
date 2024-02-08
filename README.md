@@ -7,11 +7,11 @@ TODO: this is a placeholder
 A brief description of what this project does and who it's for.
 
 ## Installation
-TODO: this is a placeholder
+PulPy requires Python version >= 3.8. The core module depends on (TBD).
 
-Provide step by step series of examples and explanations about how to get a development environment running.
+# Via pip
+
+PulPy can be installed through pip:
 
 ```bash
-git clone <repository>
-cd <repository>
-npm install
+pip install pulpy
