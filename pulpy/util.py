@@ -4,7 +4,7 @@
 
 import numpy as np
 
-__all__ = ["b12wbs", "calc_kbs", "dinf"]
+__all__ = ["b12wbs", "calc_kbs", "dinf", "wbs2b1"]
 
 
 def b12wbs(bs_offset, b1):
@@ -26,6 +26,28 @@ def b12wbs(bs_offset, b1):
     rfp_modulation = bs_offset * ((1 + (gam * b1) ** 2 / bs_offset**2) ** (1 / 2) - 1)
 
     return rfp_modulation
+
+
+def wbs2b1(bs_offset, wrf):
+    """Calculate the transmit field strength required to produce a given
+    Bloch-Siegert shift wrf, for a pulse with an offset from larmor bs_offset
+    Args:
+        bs_offset (float or array): offset from larmor frequency in Hz.
+        wrf (float or array): Bloch-Siegert shift in Hz.
+
+    Returns:
+        b1 (float): transmit field strength in G.
+
+    References:
+        Ramsey, N. F. (1955). Resonance Transitions Induced by Perturbations at
+        Two or More Different Frequencies. Phys. Rev., 100(4): 1191-1194.
+    """
+
+    gam = 4258
+    b1 = (wrf/gam)*np.sqrt((1+bs_offset/wrf)**2-1)
+
+    return b1
+
 
 
 def calc_kbs(b1, wrf, T):

@@ -8,7 +8,7 @@ import scipy.linalg as linalg
 import scipy.signal as signal
 import sigpy as sp
 
-from pulpy.util import dinf
+from pulpy.util import dinf, wbs2b1, b12wbs
 
 __all__ = [
     "dzrf",
