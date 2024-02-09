@@ -44,10 +44,9 @@ def wbs2b1(bs_offset, wrf):
     """
 
     gam = 4258
-    b1 = (wrf/gam)*np.sqrt((1+bs_offset/wrf)**2-1)
+    b1 = (wrf / gam) * np.sqrt((1 + bs_offset / wrf) ** 2 - 1)
 
     return b1
-
 
 
 def calc_kbs(b1, wrf, T):
