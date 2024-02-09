@@ -27,6 +27,7 @@ __all__ = [
     "dz_recursive_rf",
     "dz_hadamard_b",
     "calc_ripples",
+    "dz_ramp_beta",
 ]
 
 """ Functions for SLR pulse design
@@ -859,3 +860,47 @@ def dz_recursive_rf(
         return rf
     else:
         return rf, rf_ref
+
+
+def dz_ramp_beta(n, T, ptype, pbc, pbw, bs_offset, tb, d1, d2, dt):
+
+    # Part 1: Conventional SLR beta filter design
+    ftw = dinf(d1, d2) / tb  # fractional transition width
+    shift = n / 4
+    f = np.array([0, shift - (1 + ftw) * tb / 2, shift - (1 - ftw) * tb /2,
+                  shift + (1 - ftw) * tb / 2, shift + (1 + ftw) * tb / 2,
+                  n / 2])   # edges, normalized to Nyquist
+    f /= (n/2)
+
+    m = np.array([0, 0, 1, 1, 0, 0])  # amp @ edges
+    w = np.array([d1 / d2, 1, d1 / d2])  # band error weights
+
+    # design the filter, firls requires odd numtaps, so design 1 extra & trim
+    b = signal.firls(n + 1, f, m, w)
+    b = b[0:n]
+
+    # hilbert transformation to suppress negative passband, and demod to DC
+    b = signal.hilbert(b)
+    b = b * np.exp(-1j * 2 * np.pi / n * shift * np.linspace(0, n-1, n)) / 2
+    b = b / np.max(b)
+
+    b_f = sp.ifft(b, center=True)
+
+    df = (1/T) * (2*np.pi/n*shift/2)
+    omega_ss = b12wbs(bs_offset, pbc)
+    f_v = (np.linspace(-n/2, n/2-1, n))*df + omega_ss  # Hz
+
+    b1_v = wbs2b1(f_v, bs_offset)
+
+    b1_v[np.isnan(b1_v)] = 1  # prevent weirdness from NaN b1
+    b1_v[np.where(b1_v <= 0)] = 1  # prevent weirdness from negative b1
+    if ptype == 'st' or ptype == 'ex' or ptype =='sat' or ptype=='inv':
+        b = b_f / b1_v
+        if ptype == 'ex' or ptype == 'sat' or ptype=='inv':
+            b = np.roll(np.flipud(b), 1)  # to compensate for a flip in b2rf
+    else:
+        ValueError('Ramp filter not recommended for pulse types other than '
+                   'st., 90, or sat')
+
+    b = sp.fft(b, center=True)
+    return np.expand_dims(b/np.sum(b), 0)
