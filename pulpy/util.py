@@ -9,7 +9,7 @@ __all__ = ["b12wbs", "calc_kbs", "dinf", "wbs2b1"]
 
 def b12wbs(bs_offset, b1):
     """Calculate bloch-siegert shift for a given frequency offset and field
-    strength.
+    strength. Note that this is NOT the first-order approximation given by Sacolick.
     Args:
         bs_offset (float or array): offset from larmor frequency in Hz.
         b1 (float or array): transmit field strength in G.
