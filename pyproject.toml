@@ -18,4 +18,5 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/jonbmartin/pulpy"
+homepage = "https://github.com/jonbmartin/pulpy"
+repository = "https://github.com/jonbmartin/pulpy"
