@@ -3,8 +3,8 @@ import unittest
 import numpy as np
 import sigpy as sp
 
-from pulpy.trajgrad import spiral_k, stack_of
 from pulpy.linop import PtxSpatialExplicit
+from pulpy.trajgrad import spiral_k, stack_of
 
 if __name__ == "__main__":
     unittest.main()

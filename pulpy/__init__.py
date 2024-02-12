@@ -22,10 +22,10 @@ from pulpy.slr import *  # noqa
 from pulpy.trajgrad import *  # noqa
 from pulpy.util import *  # noqa
 
-__all__ = ["linop"]
 __all__.extend(adiabatic.__all__)
 __all__.extend(b1sel.__all__)
 __all__.extend(io.__all__)
+__all__.extend(linop.__all__)
 __all__.extend(multiband.__all__)
 __all__.extend(optcont.__all__)
 __all__.extend(ptx.__all__)
