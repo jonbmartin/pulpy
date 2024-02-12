@@ -8,7 +8,7 @@ import sigpy as sp
 from scipy.interpolate import interp1d
 from sigpy import backend
 
-from pulpy.linop import *
+from pulpy.linop import PtxSpatialExplicit
 from pulpy.slr import dzrf
 from pulpy.trajgrad import min_trap_grad, spokes_grad
 

@@ -3,7 +3,6 @@ import unittest
 import numpy as np
 import sigpy as sp
 import sigpy.mri.rf as rf
-from sigpy.mri.rf import linop
 
 from pulpy.trajgrad import spiral_k, stack_of
 
