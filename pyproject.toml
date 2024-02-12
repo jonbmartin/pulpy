@@ -4,7 +4,7 @@ build-backend ="setuptools.build_meta"
 
 [project]
 name = "pulpy"
-version = "1.6.1"
+version = "1.6.3"
 authors = [
   { name="Jonathan Martin", email="jonathan.bach.martin@vumc.org" },
 ]
