@@ -69,9 +69,7 @@ def dz_bssel_rf(
         Proc. Intl. Soc. Magn. Reson. Med.
     """
 
-    beta = 0.5  # AM waveform parameter for fermi sweeps # JBM was 0.5
     nsw = np.round(1250e-6 / dt)  # number of time points in sweeps
-    kappa = np.arctan(2)  # FM waveform parameter
 
     # calculate bandwidth and pulse duration using lowest PBC of bands. Lower
     # PBC's require a longer pulse, so lowest constrains our pulse length
