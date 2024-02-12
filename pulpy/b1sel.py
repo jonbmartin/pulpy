@@ -3,10 +3,10 @@
 
 """
 import numpy as np
+from scipy.interpolate import interp1d
 
 import pulpy.slr as slr
-from pulpy.util import dinf, b12wbs, calc_kbs
-from scipy.interpolate import interp1d
+from pulpy.util import b12wbs, calc_kbs, dinf
 
 __all__ = [
     "dz_bssel_rf",

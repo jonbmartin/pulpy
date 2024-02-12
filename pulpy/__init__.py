@@ -6,20 +6,8 @@ includes other functions to assist with pulse design, such as I/O functions,
 trajectory/gradient designers, and Bloch simulators.
 
 """
-from pulpy import (
-    adiabatic,
-    b1sel,
-    io,
-    multiband,
-    optcont,
-    ptx,
-    shim,
-    sim,
-    slr,
-    trajgrad,
-    util,
-    verse,
-)
+from pulpy import (adiabatic, b1sel, io, multiband, optcont, ptx, shim, sim,
+                   slr, trajgrad, util, verse)
 from pulpy.adiabatic import *  # noqa
 from pulpy.b1sel import *  # noqa
 from pulpy.io import *  # noqa
@@ -31,7 +19,6 @@ from pulpy.shim import *  # noqa
 from pulpy.sim import *  # noqa
 from pulpy.slr import *  # noqa
 from pulpy.trajgrad import *  # noqa
-from pulpy.util import *  # noqa
 from pulpy.util import *  # noqa
 
 __all__ = ["linop"]
