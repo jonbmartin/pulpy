@@ -4,4 +4,4 @@ black .
 isort .
 ruff .
 coverage run -m unittest
-sphinx-build -W docs docs/_build/html
+sphinx-build docs -W -b linkcheck -d _build/doctrees _build/html
