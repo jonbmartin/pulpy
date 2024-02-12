@@ -2,9 +2,9 @@ import unittest
 
 import numpy as np
 import sigpy as sp
-import sigpy.mri.rf as rf
 
 from pulpy.trajgrad import spiral_k, stack_of
+from pulpy.linop import PtxSpatialExplicit
 
 if __name__ == "__main__":
     unittest.main()
@@ -45,6 +45,6 @@ class TestLinop(unittest.TestCase):
 
         mps = sp.randn(mps_shape, dtype=np.complex64)
 
-        A = linop.PtxSpatialExplicit(mps, k, dt, img_shape)
+        A = PtxSpatialExplicit(mps, k, dt, img_shape)
 
         check_linop_adjoint(A, dtype=np.complex64)
