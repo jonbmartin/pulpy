@@ -1,12 +1,12 @@
 PulPy: Pulses in Python
-=====
+=======================
 
-.. image:: docs/figures/pulpy_logo_v2.png
+.. image:: ../docs/figures/pulpy_logo_v2.png
   :width: 250
   :alt: Alternative text
 
 
-`Source Code <https://github.com/mikgroup/sigpy>`_ | `Documentation <https://sigpy.readthedocs.io>`_ |
+`Source Code <https://github.com/jonbmartin/pulpy>`_ | `Documentation <https://pulpy.readthedocs.io>`_ |
 
 
 ## Description
@@ -17,14 +17,14 @@ A brief description of what this project does and who it's for.
 Installation
 ------------
 
-SigPy requires Python version >= 3.5. The core module depends on ``numba``, ``numpy``, ``PyWavelets``, ``scipy``, and ``tqdm``.
+PulPy requires Python version >= 3.8. The core module depends on ``numba``, ``numpy``, ``PyWavelets``, ``scipy``, and ``tqdm``.
 
 Via ``pip``
 ***********
 
-SigPy can be installed through ``pip``::
+PulPy can be installed through ``pip``::
 	
-    pip install sigpy
+    pip install pulpy
 
 Developer Installation
 ***************************
