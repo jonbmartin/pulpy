@@ -1,4 +1,4 @@
-Functions (`pulpy.rf`)
+RF pulse design (`pulpy.rf`)
 ===================
 .. automodule::
    pulpy.rf
