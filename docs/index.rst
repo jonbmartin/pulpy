@@ -1,5 +1,5 @@
 .. include:: ../README.rst
-   
+
 .. toctree::
    :hidden:
    :caption: Core Utilities
