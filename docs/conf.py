@@ -82,7 +82,7 @@ pygments_style = "sphinx"
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "pyramid"
+html_theme = "haiku"
 
 html_logo = ""
 
