@@ -84,7 +84,7 @@ pygments_style = "sphinx"
 #
 html_theme = "haiku"
 
-html_logo = ""
+html_logo = "figures/pulpy_logo_v2.png"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
