@@ -8,7 +8,10 @@ PulPy: Pulses in Python
 
 `Source Code <https://github.com/jonbmartin/pulpy>`_ | `Documentation <https://pulpy.readthedocs.io>`_ |
 
-
+.. image:: https://readthedocs.org/projects/pulpy/badge/?version=latest
+    :target: https://pulpy.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+    
 ## Description
 TODO: this is a placeholder 
 
