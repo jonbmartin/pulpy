@@ -1,7 +1,6 @@
 """The core module contains functions and classes for RF pulse design.
 
- The submodule also
-includes other functions to assist with pulse design, such as I/O functions and Bloch simulators.
+ It also includes other functions to assist with pulse design, such as I/O functions and Bloch simulators.
 
 """
 
