@@ -2,7 +2,7 @@
 
 """
 
-from pulpy import trajgrad
+from pulpy.grad import trajgrad
 from pulpy.grad.trajgrad import *  # noqa
 
 __all__ = ["linop"]
