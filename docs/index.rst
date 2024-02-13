@@ -1,18 +1,18 @@
 
 .. toctree::
    :hidden:
-   :caption: Core API Reference
+   :caption: Core Utilities
 
    core
 
 .. toctree::
    :hidden:
-   :caption: RF Pulse Design API Reference
+   :caption: RF Pulse Design
 
    rf
 
 .. toctree::
    :hidden:
-   :caption: Gradient Waveform Design API Reference
+   :caption: Gradient Waveform Design
 
    grad
