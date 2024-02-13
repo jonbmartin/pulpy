@@ -111,7 +111,7 @@ pygments_style = "default"
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "sigpydoc"
+htmlhelp_basename = "pulpydoc"
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -135,7 +135,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, "pulpy.tex", "pulpy Documentation", "Frank Ong", "manual"),
+    (master_doc, "pulpy.tex", "pulpy Documentation", "Jonathan Martin", "manual"),
 ]
 
 

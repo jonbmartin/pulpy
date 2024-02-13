@@ -4,3 +4,4 @@ PyWavelets
 scipy
 tqdm
 sigpy
+sphinx-rtd-theme
