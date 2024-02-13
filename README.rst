@@ -15,17 +15,17 @@ PulPy: Pulses in Python
 Description
 -----------
 Welcome to PulPy! PulPy is a python package for RF pulse and gradient pulse design for MRI.
-
-PulPy is the successor package to `SigPy.RF <https://github.com/jonbmartin/sigpy-rf>`_, which is a sub package for RF pulse
-design nested inside of the `SigPy <https://github.com/mikgroup/sigpy>`_ Python package for signal processing and image reconstruction.
-PulPy is designed to replicate the functionality of SigPy.RF, but is able to stand alone as its own Python package for 
-those with less interest in the other features of SigPy, such as iterative image reconstruction. It also places greater emphasis on 
-MRI gradient waveform design, which is necessary for many classes of RF pulses but also has broader applicability.
+the
+PulPy is the successor package to `SigPy.RF <https://github.com/jonbmartin/sigpy-rf>`_, a sub package for RF pulse
+design nested inside of the `SigPy <https://github.com/mikgroup/sigpy>`_ package for signal processing and image reconstruction.
+PulPy is designed to replicate  functionality of SigPy.RF, but is able to stand alone as an independent Python package. It also places greater emphasis on 
+MRI gradient waveform design, which is necessary for many classes of RF pulses but also has broader applicability. PulPy current relies on SigPy as a 
+dependency, but this dependency will be reduced in future releases. 
 
 Installation
 ------------
 
-PulPy requires Python version >= 3.8. The core module depends on ``numba``, ``numpy``, ``PyWavelets``, ``scipy``, and ``tqdm``.
+PulPy requires Python version >= 3.8. The core module depends on ``numba``, ``numpy``, ``sigpy``, ``PyWavelets``, ``scipy``, and ``tqdm``.
 
 Via ``pip``
 ***********
@@ -47,3 +47,8 @@ To run tests and contribute, we recommend installing the following packages::
 	pip install coverage ruff sphinx sphinx_rtd_theme black isort
 
 and run the script ``run_tests.sh``.
+
+Contact and Contribution
+------------------------
+We welcome feedback on this project! It is a work in project, so please report bugs and issues on 
+GitHub. We also encourage you to contribute additional pulse design tools. Point of contact: jonathan.bach.martin@vumc.org. 
