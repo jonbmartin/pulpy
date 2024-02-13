@@ -1,1 +1,7 @@
+numba
+numpy
+PyWavelets
+scipy
+tqdm
+sigpy
 sphinx-rtd-theme
