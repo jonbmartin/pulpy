@@ -13,7 +13,7 @@ from pulpy.verse import *  # noqa
 
 from .version import __version__  # noqa
 
-__all__ = ["linop"]
+__all__ = []
 __all__.extend(io.__all__)
 __all__.extend(linop.__all__)
 __all__.extend(sim.__all__)

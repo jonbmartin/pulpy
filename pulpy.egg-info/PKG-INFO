@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pulpy
-Version: 1.6.3
+Version: 1.7.0
 Summary: PulPy-Pulses in Python. A package for MRI/NMR RF pulse design
 Author-email: Jonathan Martin <jonathan.bach.martin@vumc.org>
 Project-URL: homepage, https://github.com/jonbmartin/pulpy
@@ -11,21 +11,3 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 License-File: LICENSE
-
-# PulPy - Pulses in Python
-<img src="docs/figures/pulpy_logo_v2.png" width="200">
-
-## Description
-TODO: this is a placeholder 
-
-A brief description of what this project does and who it's for.
-
-## Installation
-PulPy requires Python version >= 3.8. The core module depends on (TBD).
-
-# Via pip
-
-PulPy can be installed through pip:
-
-```bash
-pip install pulpy

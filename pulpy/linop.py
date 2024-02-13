@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-"""MRI pulse-design-specific linear operators.
+"""MRI pulse-design-specific linear operators. This creates an instance of the SigPy linop class
 """
 import sigpy as sp
 from sigpy import backend
 
+__all__ = ["PtxSpatialExplicit"]
 
 def PtxSpatialExplicit(sens, coord, dt, img_shape, b0=None, ret_array=False):
     """Explicit spatial-domain pulse design linear operator.
