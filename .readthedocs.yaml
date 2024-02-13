@@ -1,6 +1,7 @@
 # .readthedocs.yaml
 # Read the Docs configuration file
 # See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+# Personal note: readthedocs.org is not compatible with all browsers. Brave does not work, Firefox does
 
 # Required
 version: 2
