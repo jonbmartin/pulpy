@@ -5,11 +5,13 @@ includes other functions to assist with pulse design, such as I/O functions and 
 
 """
 
-from pulpy import io, linop, sim, verse
+from pulpy import (io, linop, sim, verse)
 from pulpy.io import *  # noqa
 from pulpy.linop import *  # noqa
 from pulpy.sim import *  # noqa
 from pulpy.verse import *  # noqa
+
+from .version import __version__  # noqa
 
 __all__ = ["linop"]
 __all__.extend(io.__all__)
