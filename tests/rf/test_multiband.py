@@ -3,9 +3,9 @@ import unittest
 import numpy as np
 import numpy.testing as npt
 
-import pulpy.multiband as multiband
+import pulpy.rf.multiband as multiband
 import pulpy.sim as sim
-import pulpy.slr as slr
+import pulpy.rf.slr as slr
 
 if __name__ == "__main__":
     unittest.main()

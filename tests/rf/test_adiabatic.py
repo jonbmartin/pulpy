@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 import numpy.testing as npt
 
-import pulpy.adiabatic as adiabatic
+import pulpy.rf.adiabatic as adiabatic
 import pulpy.sim as sim
 
 if __name__ == "__main__":

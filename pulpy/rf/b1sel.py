@@ -5,8 +5,8 @@
 import numpy as np
 from scipy.interpolate import interp1d
 
-import pulpy.slr as slr
-from pulpy.util import b12wbs, calc_kbs, dinf
+import pulpy.rf.slr as slr
+from pulpy.rf.util import b12wbs, calc_kbs, dinf
 
 __all__ = [
     "dz_bssel_rf",

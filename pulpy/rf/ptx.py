@@ -9,8 +9,8 @@ from scipy.interpolate import interp1d
 from sigpy import backend
 
 from pulpy.linop import PtxSpatialExplicit
-from pulpy.slr import dzrf
-from pulpy.trajgrad import min_trap_grad, spokes_grad
+from pulpy.rf.slr import dzrf
+from pulpy.grad.trajgrad import min_trap_grad, spokes_grad
 
 __all__ = ["stspa", "stspk"]
 

@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 import numpy.testing as npt
 
-import pulpy.b1sel as b1sel
+import pulpy.rf.b1sel as b1sel
 import pulpy.sim as sim
 
 if __name__ == "__main__":

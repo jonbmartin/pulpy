@@ -4,7 +4,7 @@ import unittest
 import numpy as np
 import numpy.testing as npt
 
-import pulpy.trajgrad as trajgrad
+import pulpy.grad.trajgrad as trajgrad
 
 if __name__ == "__main__":
     unittest.main()

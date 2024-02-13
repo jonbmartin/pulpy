@@ -5,7 +5,7 @@ import numpy.testing as npt
 import sigpy as sp
 
 import pulpy.sim as sim
-import pulpy.slr as slr
+import pulpy.rf.slr as slr
 
 if __name__ == "__main__":
     unittest.main()

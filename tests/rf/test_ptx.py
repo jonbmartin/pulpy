@@ -6,9 +6,9 @@ import sigpy as sp
 from scipy.ndimage import gaussian_filter
 
 import pulpy.linop as linop
-import pulpy.ptx as ptx
+import pulpy.rf.ptx as ptx
 import pulpy.sim as sim
-import pulpy.trajgrad as trajgrad
+import pulpy.grad.trajgrad as trajgrad
 
 if __name__ == "__main__":
     unittest.main()
