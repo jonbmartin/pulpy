@@ -13,7 +13,7 @@ from pulpy.rf.shim import *  # noqa
 from pulpy.rf.slr import *  # noqa
 from pulpy.rf.util import *  # noqa
 
-__all__ = []
+__all__ = ["linop"]
 __all__.extend(adiabatic.__all__)
 __all__.extend(b1sel.__all__)
 __all__.extend(multiband.__all__)
