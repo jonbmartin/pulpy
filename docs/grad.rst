@@ -1,5 +1,5 @@
 RF gradient waveform design (`pulpy.grad`)
-===================
+==========================================
 .. automodule::
    pulpy.grad
 		
