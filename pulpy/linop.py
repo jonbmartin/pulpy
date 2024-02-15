@@ -6,6 +6,7 @@ from sigpy import backend
 
 __all__ = ["PtxSpatialExplicit"]
 
+
 def PtxSpatialExplicit(sens, coord, dt, img_shape, b0=None, ret_array=False):
     """Explicit spatial-domain pulse design linear operator.
     Linear operator relates rf pulses to desired magnetization.

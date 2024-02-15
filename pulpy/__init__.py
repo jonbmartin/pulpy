@@ -4,7 +4,7 @@
 
 """
 
-from pulpy import (io, linop, sim, verse)
+from pulpy import io, linop, sim, verse
 from pulpy.io import *  # noqa
 from pulpy.linop import *  # noqa
 from pulpy.sim import *  # noqa

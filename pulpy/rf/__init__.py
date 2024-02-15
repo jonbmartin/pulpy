@@ -3,6 +3,7 @@ It contains functions to design a variety of RF pulses, such as SLR,
 adiabatic, parallel transmit, multibanded, and others.
 
 """
+
 from pulpy.rf import adiabatic, b1sel, multiband, optcont, ptx, shim, slr, util
 from pulpy.rf.adiabatic import *  # noqa
 from pulpy.rf.b1sel import *  # noqa
