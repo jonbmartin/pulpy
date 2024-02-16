@@ -825,4 +825,3 @@ def traj_array_to_complex(k):
     """
     kout = k[:, 0] + 1j * k[:, 1]
     return kout
-

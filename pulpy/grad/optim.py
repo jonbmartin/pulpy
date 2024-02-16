@@ -3,6 +3,8 @@
 """
 
 import math
+
+import numba as nb
 import numpy as np
 from scipy import integrate, interpolate
 

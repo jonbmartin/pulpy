@@ -3,9 +3,8 @@
 """
 
 from pulpy.grad import optim, waveform
-from pulpy.grad.waveform import *  # noqa
 from pulpy.grad.optim import *  # noqa
-
+from pulpy.grad.waveform import *  # noqa
 
 __all__ = []
 __all__.extend(optim.__all__)
