@@ -25,7 +25,7 @@ Trajectory and Gradient Design Functions
     pulpy.grad.waveform.traj_array_to_complex
 
 Trajectory and Gradient Optimization Functions
-----------------------------------------
+----------------------------------------------
 .. automodule::
    pulpy.grad.optim
 
