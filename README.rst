@@ -6,7 +6,7 @@ PulPy: Pulses in Python
   :alt: Alternative text
 
 
-`Source Code <https://github.com/jonbmartin/pulpy>`_ | `Documentation <https://pulpy.readthedocs.io>`_
+`Source Code <https://github.com/jonbmartin/pulpy>`_ | `Documentation <https://pulpy.readthedocs.io>`_ | `Demo Code <https://github.com/jonmbmartin/pulpy-tutorials>`_
 
 .. image:: https://readthedocs.org/projects/pulpy/badge/?version=latest
     :target: https://pulpy.readthedocs.io/en/latest/?badge=latest
