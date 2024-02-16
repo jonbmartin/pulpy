@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 import sigpy as sp
 
-from pulpy.grad.trajgrad import spiral_k, stack_of
+from pulpy.grad.waveform import spiral_k, stack_of
 from pulpy.linop import PtxSpatialExplicit
 
 if __name__ == "__main__":

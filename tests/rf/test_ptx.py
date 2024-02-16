@@ -5,7 +5,7 @@ import numpy.testing as npt
 import sigpy as sp
 from scipy.ndimage import gaussian_filter
 
-import pulpy.grad.trajgrad as trajgrad
+import pulpy.grad.waveform as waveform
 import pulpy.linop as linop
 import pulpy.rf.ptx as ptx
 import pulpy.sim as sim
@@ -96,7 +96,7 @@ class TestPtx(unittest.TestCase):
         R = 1
         dx = 0.025  # in m
         # construct a trajectory
-        g, k, t, s = trajgrad.spiral_arch(fov / R, dx, gts, gslew, gamp)
+        g, k, t, s = waveform.spiral_arch(fov / R, dx, gts, gslew, gamp)
 
         A = linop.Sense(sens, coord=k, ishape=target.shape).H
 
@@ -118,7 +118,7 @@ class TestPtx(unittest.TestCase):
     def test_stspa_2d_explicit(self):
         target, sens = self.problem_2d(8)
         dim = target.shape[0]
-        g, k1, t, s = trajgrad.spiral_arch(0.24, dim, 4e-6, 200, 0.035)
+        g, k1, t, s = waveform.spiral_arch(0.24, dim, 4e-6, 200, 0.035)
         k1 = k1 / dim
 
         A = linop.PtxSpatialExplicit(sens, k1, dt=4e-6, img_shape=target.shape, b0=None)
@@ -142,10 +142,10 @@ class TestPtx(unittest.TestCase):
         target, sens = self.problem_3d(3, nz)
         dim = target.shape[0]
 
-        g, k1, t, s = trajgrad.spiral_arch(0.24, dim, 4e-6, 200, 0.035)
+        g, k1, t, s = waveform.spiral_arch(0.24, dim, 4e-6, 200, 0.035)
         k1 = k1 / dim
 
-        k1 = trajgrad.stack_of(k1, nz, 0.1)
+        k1 = waveform.stack_of(k1, nz, 0.1)
         A = linop.PtxSpatialExplicit(sens, k1, dt=4e-6, img_shape=target.shape, b0=None)
 
         pulses = ptx.stspa(
@@ -168,10 +168,10 @@ class TestPtx(unittest.TestCase):
         target, sens = self.problem_3d(3, nz)
         dim = target.shape[0]
 
-        g, k1, t, s = trajgrad.spiral_arch(0.24, dim, 4e-6, 200, 0.035)
+        g, k1, t, s = waveform.spiral_arch(0.24, dim, 4e-6, 200, 0.035)
         k1 = k1 / dim
 
-        k1 = trajgrad.stack_of(k1, nz, 0.1)
+        k1 = waveform.stack_of(k1, nz, 0.1)
         A = sp.mri.linop.Sense(sens, k1, weights=None, tseg=None, ishape=target.shape).H
 
         pulses = ptx.stspa(

@@ -5,7 +5,7 @@
 import numpy as np
 
 import pulpy.rf.slr as slr
-from pulpy.grad.trajgrad import trap_grad
+from pulpy.grad.waveform import trap_grad
 
 __all__ = ["mb_phs_tab", "mb_rf", "dz_pins"]
 

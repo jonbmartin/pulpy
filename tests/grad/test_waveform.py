@@ -4,7 +4,7 @@ import unittest
 import numpy as np
 import numpy.testing as npt
 
-import pulpy.grad.trajgrad as trajgrad
+import pulpy.grad.waveform as waveform
 
 if __name__ == "__main__":
     unittest.main()
@@ -18,7 +18,7 @@ class TestTrajGrad(unittest.TestCase):
         kz = t
         k = np.stack((kx, ky, kz), axis=-1)
 
-        (g, k, s, t) = trajgrad.min_time_gradient(
+        (g, k, s, t) = waveform.min_time_gradient(
             k, 0.0, 0.0, gmax=4, smax=15, dt=4e-3, gamma=4.257
         )
 
@@ -30,7 +30,7 @@ class TestTrajGrad(unittest.TestCase):
         dgdt = 18000  # g/cm/s
         gmax = 2  # g/cm
 
-        trap, _ = trajgrad.trap_grad(area, gmax, dgdt, dt)
+        trap, _ = waveform.trap_grad(area, gmax, dgdt, dt)
 
         npt.assert_almost_equal(area, np.sum(trap) * dt, decimal=3)
         npt.assert_almost_equal(gmax, np.max(trap), decimal=1)
@@ -41,7 +41,7 @@ class TestTrajGrad(unittest.TestCase):
         dgdt = 18000  # g/cm/s
         gmax = 2  # g/cm
 
-        trap, _ = trajgrad.min_trap_grad(area, gmax, dgdt, dt)
+        trap, _ = waveform.min_trap_grad(area, gmax, dgdt, dt)
 
         npt.assert_almost_equal(area, np.sum(trap) * dt, decimal=3)
         npt.assert_almost_equal(gmax, np.max(trap), decimal=1)
