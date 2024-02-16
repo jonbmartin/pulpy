@@ -14,7 +14,8 @@ pulpy.egg-info/SOURCES.txt
 pulpy.egg-info/dependency_links.txt
 pulpy.egg-info/top_level.txt
 pulpy/grad/__init__.py
-pulpy/grad/trajgrad.py
+pulpy/grad/optim.py
+pulpy/grad/waveform.py
 pulpy/rf/__init__.py
 pulpy/rf/adiabatic.py
 pulpy/rf/b1sel.py

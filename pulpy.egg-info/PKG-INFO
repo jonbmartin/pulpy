@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: pulpy
-Version: 1.7.0
+Version: 1.7.1
 Summary: PulPy-Pulses in Python. A package for MRI/NMR RF pulse design
 Author-email: Jonathan Martin <jonathan.bach.martin@vumc.org>
 Project-URL: homepage, https://github.com/jonbmartin/pulpy
