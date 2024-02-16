@@ -48,6 +48,11 @@ To run tests and contribute, we recommend installing the following packages::
 
 and run the script ``run_tests.sh``.
 
+If you make modifications and would like to update the version number across the release, run bumpversion 
+(where argument size is one of 'major', 'minor', 'patch')::
+
+  bumpversion --current-version 1.8.0 size
+
 Contact and Contribution
 ------------------------
 We welcome feedback on this project! It is a work in project, so please report bugs and issues on 
