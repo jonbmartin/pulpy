@@ -114,14 +114,16 @@ def abrm_nd(rf, x, g):
         return a, b
 
 
-def abrm_hp(rf, gamgdt, xx, dom0dt=0):
+def abrm_hp(rf, gamgdt, xx, dom0dt=0, b1=None):
     r"""1D RF pulse simulation, with non-simultaneous RF + gradient rotations.
 
     Args:
         rf (array): rf pulse samples in radians.
-        gamdt (array): gradient samples in radians/(units of xx).
+        gamgdt (array): gradient samples in radians/(units of xx).
         xx (array): spatial locations.
-        dom0dt (float): off-resonance phase in radians.
+        dom0dt (array): off-resonance phase in radians.
+        b1 (array): B1 at each spatial location, for each channel in rf. 
+            b1 * rf should have units of radians
 
     Returns:
         2-element tuple containing
@@ -138,11 +140,13 @@ def abrm_hp(rf, gamgdt, xx, dom0dt=0):
 
     device = backend.get_device(rf)
     xp = device.xp
+
+    if b1 is None:
+        rf = rf.flatten()
+
     with device:
-        Ns = xp.shape(xx)
-        Ns = Ns[0]  # Ns: # of spatial locs
-        Nt = xp.shape(gamgdt)
-        Nt = Nt[0]  # Nt: # time points
+        Ns = xx.shape[0] # Ns: # of spatial locs
+        Nt = gamgdt.shape[0]  # Nt: # time points
 
         a = xp.ones((Ns,))
         b = xp.zeros((Ns,))
@@ -153,8 +157,13 @@ def abrm_hp(rf, gamgdt, xx, dom0dt=0):
             b = b * z
 
             # apply rf
-            C = xp.cos(xp.abs(rf[ii]) / 2)
-            S = 1j * xp.exp(1j * xp.angle(rf[ii])) * xp.sin(xp.abs(rf[ii]) / 2)
+            if b1 is None:
+                C = xp.cos(xp.abs(rf[ii]) / 2)
+                S = 1j * xp.exp(1j * xp.angle(rf[ii])) * xp.sin(xp.abs(rf[ii]) / 2)
+            else: 
+                b1rf = b1 @ rf[:, ii]
+                C = xp.cos(xp.abs(b1rf) / 2)
+                S = 1j * xp.exp(1j * xp.angle(b1rf)) * xp.sin(xp.abs(b1rf) / 2)
             at = a * C - b * xp.conj(S)
             bt = a * S + b * C
 
