@@ -53,6 +53,12 @@ If you make modifications and would like to update the version number across the
 
   bumpversion --current-version 1.8.1 size
 
+
+Usage
+-----------
+(TODO: JBM update usage documentation)
+
+
 Contact and Contribution
 ------------------------
 We welcome feedback on this project! It is a work in project, so please report bugs and issues on 
