@@ -58,30 +58,32 @@ Getting Started
 **********************
 To begin using `pulpy`, import the package in your Python script:
 
-``python
-import pulpy as pp
-``
+.. code-block:: python
+
+   codeimport pulpy as pp
+
 
 1) RF Pulse Design and Simulation
 **************************************
 `pulpy` allows you to easily design and simulate RF pulses. Here's an example of an SLR pulse design with multibanding: 
 
 1a) define RF pulse parameters 
-``python
+
+.. code-block:: python
+
 tb = 8 		# RF pulse time-bandwidth product
 N = 512 	# number of timepoints to design
 d1 = 0.01 	# magnetization passband ripple level
 d2 = 0.01 	# magnetization stopband ripple level
 p_type = 'ex'   # RF pulse type - a 90 degree excitation pulse
 f_type = 'ls'   # filter type for SLR design - using a least squares filter
-``
 
 1b) design the RF pulse
 
 
-``python
+.. code-block:: python
+
 pulse = rf.slr.dzrf(N, tb, p_type, f_type, d1, d2, True)
-``
 
 Ex: Gradient Waveform Design and Optimization
 ************************************************
