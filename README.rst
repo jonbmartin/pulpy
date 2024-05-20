@@ -62,6 +62,10 @@ To begin using `pulpy`, import the package in your Python script:
 import pulpy
 ``
 
+## RF Pulse Design and Simulation
+
+## Gradient Design and Optimization
+
 Contact and Contribution
 *************************
 
