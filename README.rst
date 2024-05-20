@@ -14,7 +14,7 @@ PulPy: Pulses in Python
 
 Description
 -----------
-Welcome to PulPy! PulPy is a python package for RF pulse and gradient pulse design for MRI.
+Welcome to PulPy! PulPy is a python package for RF pulse and gradient pulse design for MRI. PulPy focuses on the design of individual pulses rather than full pulse sequences (for this, see other packages, e.g. PyPulSeq).
 
 PulPy is the successor package to `SigPy.RF <https://github.com/jonbmartin/sigpy-rf>`_, a sub package for RF pulse
 design nested inside of the `SigPy <https://github.com/mikgroup/sigpy>`_ package for signal processing and image reconstruction.
