@@ -146,7 +146,7 @@ to a few tools for more advanced design (e.g. min-time-gradient design):
 
 .. code-block:: python
 
-import math        
+	import math        
     
 	t = np.linspace(0, 1, 1000)
 	kx = np.sin(2.0 * math.pi * t)
