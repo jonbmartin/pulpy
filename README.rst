@@ -101,7 +101,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 .. image:: docs/figures/multiband_pulse.png
    :width: 300
 
-1d) simulate the transverse magnetization profile of both pulses. We do this by first calculating the Cayley-Klein parameters representing the rotation of the magnetization vector produced by the RF puls. We then use the relationships in Pauly et. al. to convert this to the resulting excitation magnetization. 
+1d) simulate the transverse magnetization profile of both pulses. We do this by first calculating the Cayley-Klein parameters representing the rotation of the magnetization vector produced by the RF pulse (variables 'a' and 'b'). We then use the relationships in Pauly et. al. to convert this to the resulting excitation magnetization. 
 
 .. code-block:: python
 
