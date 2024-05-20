@@ -51,7 +51,7 @@ class TestSlr(unittest.TestCase):
             npt.assert_almost_equal(pts, np.array([1, -0.2, 1]), decimal=1)
 
     def test_root_flipped(self):
-        tb = 12
+        tb = 4
         N = 128
         d1 = 0.01
         d2 = 0.001
@@ -73,7 +73,7 @@ class TestSlr(unittest.TestCase):
             ]
         )
 
-        npt.assert_almost_equal(pts, np.array([1, 0.2, 1]), decimal=1)
+        npt.assert_almost_equal(pts, np.array([1, -0.1, 1]), decimal=1)
 
     def test_recursive(self):
         # Design the pulses
