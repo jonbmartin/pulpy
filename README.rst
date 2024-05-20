@@ -121,9 +121,15 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 then write to .i file:
 
 .. code-block:: python
+<<<<<<< HEAD
 	
 	pp.ge_rf_params(pulse, dt=4e-6)
 	pp.signa(pulse, 'slr_ex')
+=======
+
+	pp.ge_rf_params(pulse, dt=4e-6)   # prints out the most important GE parameters
+	pp.signa(pulse, 'slr_ex')         # writes to .i file
+>>>>>>> f69a2a8 (Update README.rst)
 
 2) Gradient Waveform Design and Optimization
 ************************************************
