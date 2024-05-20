@@ -170,7 +170,12 @@ to a few tools for more advanced design (e.g. min-time-gradient designers, which
 	    k, 0.0, 0.0, gmax=4, smax=15, dt=4e-3, gamma=4.257
 	)
 
+Documentation
+**************
+Documentation for PulPy is available at `ReadTheDocs <https://pulpy.readthedocs.io>`_.
 
+A series of Jupyter notebooks have been developed that provide tutorials of several classes 
+of pulse design at `the demo code repository <https://github.com/jonbmartin/pulpy-tutorials>`_.
 
 Contact and Contribution
 *************************
