@@ -117,6 +117,13 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 .. image:: ../docs/figures/multiband_excitation.png
    :width: 300
 
+1e) Export the RF pulse to GE format for use in a scanner. We will compute the important parameters
+then write to .i file:
+
+.. code-block:: python
+	pp.ge_rf_params(pulse, dt=4e-6)
+	pp.signa(pulse, 'slr_ex')
+
 2) Gradient Waveform Design and Optimization
 ************************************************
 `pulpy` also has a variety of tools for designing gradient pulses. This ranges from simple trapezoids, the building block of many pulse sequences: 

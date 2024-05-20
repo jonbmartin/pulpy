@@ -12,7 +12,7 @@ __all__ = ["signa", "ge_rf_params", "philips_rf_params", "siemens_rf"]
 def siemens_rf(
     pulse, rfbw, rfdurms, pulsename, minslice=0.5, maxslice=320.0, comment=None
 ):
-    """Write a .pta text file for Siemens PulseTool.
+    """Write a .pta text file for Siemens PulseTool. 
 
     Args:
         pulse (array): complex-valued RF pulse array with maximum of 4096
