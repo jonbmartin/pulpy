@@ -85,6 +85,9 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	pulse = pp.rf.slr.dzrf(N, tb, p_type, f_type, d1, d2, True)
 	pl.LinePlot(pulse,mode='r')     # plot the real component of the RF pulse
 
+.. image:: images/get_started_sphinx.png
+   :width: 600
+
 1c) multiband the single-band RF pulse to excite multiple slices simultaneously
 
 .. code-block:: python
@@ -112,9 +115,49 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 ************************************************
 `pulpy` also has a variety of tools for designing gradient pulses. This ranges from simple trapezoids: 
 
+.. code-block:: python
+
+        dt = 4e-6  # s
+        area = 200 * dt
+        dgdt = 18000  # g/cm/s
+        gmax = 2  # g/cm
+
+        trap, _ = pp.grad.waveform.trap_grad(area, gmax, dgdt, dt)
+        
+        pl.LinePlot(trap, title='trapezoidal gradient')
+
 to more complex waveforms (e.g. spiral gradient waveform):
 
+.. code-block:: python
+
+        fov = 0.55    # imaging field of view [m]
+        gts = 6.4e-6  # hardware dwell time [s]
+        gslew = 190   # max. slew rate [mT/m/ms]
+        gamp = 40     # max. amplitude [mT/m]
+        R = 1         # degree of undersampling
+        dx = 0.025    # resolution
+        
+        # construct a trajectory
+        g, k, t, s = pp.grad.waveform.spiral_arch(fov / R, dx, gts, gslew, gamp)
+        
+        pl.LinePlot(np.transpose(g),mode='r', title='spiral gradient (1 axis plotted)')
+
 to a few tools for more advanced design (e.g. min-time-gradient design): 
+
+.. code-block:: python
+
+import math        
+    
+	t = np.linspace(0, 1, 1000)
+	kx = np.sin(2.0 * math.pi * t)
+	ky = np.cos(2.0 * math.pi * t)
+	kz = t
+	k = np.stack((kx, ky, kz), axis=-1)
+	
+	(g, k, s, t) = pp.grad.optim.min_time_gradient(
+	    k, 0.0, 0.0, gmax=4, smax=15, dt=4e-3, gamma=4.257
+	)
+
 
 
 Contact and Contribution
