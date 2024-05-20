@@ -60,8 +60,8 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 
 .. code-block:: python
 
-   import pulpy as pp
-   import sigpy.plot as pl
+   import pulpy as pp    	# import full package
+   import sigpy.plot as pl      # import a plotting function
 
 1) RF Pulse Design and Simulation
 **************************************
@@ -82,7 +82,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 
 .. code-block:: python
 
-	pulse = rf.slr.dzrf(N, tb, p_type, f_type, d1, d2, True)
+	pulse = pp.rf.slr.dzrf(N, tb, p_type, f_type, d1, d2, True)
 	pl.LinePlot(pulse,mode='r')     # plot the real component of the RF pulse
 
 1c) multiband the single-band RF pulse to excite multiple slices simultaneously
@@ -90,9 +90,9 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 .. code-block:: python
 
 	n_bands = 3              # design to excite 3 bands of magnetizaztion
-	phs_type = 'phs_mod'     # phsMod, ampMod, or quadMod
+	phs_type = 'phs_mod'     # 'phsMod', 'ampMod', or 'quadMod' - the method of designing the pulse phases
 	band_sep = 5*tb          # separate by 5 slice widths
-	mb_pulse = rf.multiband.mb_rf(pulse, n_bands, band_sep, phs_type)
+	mb_pulse = pp.rf.multiband.mb_rf(pulse, n_bands, band_sep, phs_type)
 	pl.LinePlot(mb_pulse)
 
 1d) simulate the transverse magnetization profile of both pulses. We do this by first calculating the Cayley-Klein parameters representing the rotation of the magnetization vector produced by the RF puls. We then use the relationships in Pauly et. al. to convert this to the resulting excitation magnetization. 
@@ -103,13 +103,18 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	Mxy_single_band = 2*np.multiply(np.conj(a), b)  # from Pauly et. al. IEEE TMI (1991). 
 	[a, b] = pp.sim.abrm(mb_pulse, np.arange(-20*tb, 20*tb, 40*tb/2000), True)
 	Mxy_multi_band = 2*np.multiply(np.conj(a), b)  # from Pauly et. al. IEEE TMI (1991). 
-	pl.LinePlot(Mxy_single_band)
-	pl.LinePlot(Mxy_multi_band)
+	pl.LinePlot(Mxy_single_band, title='single band excitation')
+	pl.LinePlot(Mxy_multi_band, title='multi-band excitation')
 
 
 
 2) Gradient Waveform Design and Optimization
 ************************************************
+`pulpy` also has a variety of tools for designing gradient pulses. This ranges from simple trapezoids: 
+
+to more complex waveforms (e.g. spiral gradient waveform):
+
+to a few tools for more advanced design (e.g. min-time-gradient design): 
 
 
 Contact and Contribution
