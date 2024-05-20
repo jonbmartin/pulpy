@@ -56,12 +56,12 @@ If you make modifications and would like to update the version number across the
 
 Getting Started
 **********************
-To begin using `pulpy`, import the package in your Python script:
+To begin using `pulpy`, import the package in your Python script. For demo purposes, we'll also import the SigPy package's plotting functions:
 
 .. code-block:: python
 
    import pulpy as pp
-
+   import sigpy.plot as pl
 
 1) RF Pulse Design and Simulation
 **************************************
@@ -78,14 +78,37 @@ To begin using `pulpy`, import the package in your Python script:
 	p_type = 'ex'   # RF pulse type - a 90 degree excitation pulse
 	f_type = 'ls'   # filter type for SLR design - using a least squares filter
 
-1b) design the RF pulse
-
+1b) design and plot the RF pulse
 
 .. code-block:: python
 
 	pulse = rf.slr.dzrf(N, tb, p_type, f_type, d1, d2, True)
+	pl.LinePlot(pulse,mode='r')     # plot the real component of the RF pulse
 
-Ex: Gradient Waveform Design and Optimization
+1c) multiband the single-band RF pulse to excite multiple slices simultaneously
+
+.. code-block:: python
+
+	n_bands = 3              # design to excite 3 bands of magnetizaztion
+	phs_type = 'phs_mod'     # phsMod, ampMod, or quadMod
+	band_sep = 5*tb          # separate by 5 slice widths
+	mb_pulse = rf.multiband.mb_rf(pulse, n_bands, band_sep, phs_type)
+	pl.LinePlot(mb_pulse)
+
+1d) simulate the transverse magnetization profile of both pulses. We do this by first calculating the Cayley-Klein parameters representing the rotation of the magnetization vector produced by the RF puls. We then use the relationships in Pauly et. al. to convert this to the resulting excitation magnetization. 
+
+.. code-block:: python
+
+	[a, b] = pp.sim.abrm(pulse, np.arange(-20*tb, 20*tb, 40*tb/2000), True)
+	Mxy_single_band = 2*np.multiply(np.conj(a), b)  # from Pauly et. al. IEEE TMI (1991). 
+	[a, b] = pp.sim.abrm(mb_pulse, np.arange(-20*tb, 20*tb, 40*tb/2000), True)
+	Mxy_multi_band = 2*np.multiply(np.conj(a), b)  # from Pauly et. al. IEEE TMI (1991). 
+	pl.LinePlot(Mxy_single_band)
+	pl.LinePlot(Mxy_multi_band)
+
+
+
+2) Gradient Waveform Design and Optimization
 ************************************************
 
 
