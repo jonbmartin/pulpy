@@ -85,7 +85,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	pulse = pp.rf.slr.dzrf(N, tb, p_type, f_type, d1, d2, True)
 	pl.LinePlot(pulse,mode='r')     # plot the real component of the RF pulse
 
-.. image:: images/get_started_sphinx.png
+.. image:: docs/figures/slr_pulse.png
    :width: 600
 
 1c) multiband the single-band RF pulse to excite multiple slices simultaneously
