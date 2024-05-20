@@ -1,9 +1,9 @@
 PulPy: Pulses in Python
 =======================
 
-.. image:: docs/figures/pulpy_logo_v2.png
-  :width: 250
-  :alt: PulPy logo
+.. image:: ../docs/figures/pulpy_logo_v2.png
+   :width: 250
+   :alt: PulPy logo
 
 
 `Source Code <https://github.com/jonbmartin/pulpy>`_ | `Documentation <https://pulpy.readthedocs.io>`_ | `Demo Code <https://github.com/jonbmartin/pulpy-tutorials>`_
@@ -85,7 +85,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	pulse = pp.rf.slr.dzrf(N, tb, p_type, f_type, d1, d2, True)
 	pl.LinePlot(pulse,mode='r')     # plot the real component of the RF pulse
 
-.. image:: docs/figures/slr_pulse.png
+.. image:: ../docs/figures/slr_pulse.png
    :width: 300
 
 1c) multiband the single-band RF pulse to excite multiple slices simultaneously
@@ -98,7 +98,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	mb_pulse = pp.rf.multiband.mb_rf(pulse, n_bands, band_sep, phs_type)
 	pl.LinePlot(mb_pulse)
 
-.. image:: docs/figures/multiband_pulse.png
+.. image:: ../docs/figures/multiband_pulse.png
    :width: 300
 
 1d) simulate the transverse magnetization profile of both pulses. We do this by first calculating the Cayley-Klein parameters representing the rotation of the magnetization vector produced by the RF pulse (variables 'a' and 'b'). We then use the relationships in Pauly et. al. to convert this to the resulting excitation magnetization. 
@@ -112,9 +112,9 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	pl.LinePlot(Mxy_single_band, title='single band excitation')
 	pl.LinePlot(Mxy_multi_band, title='multi-band excitation')
 
-.. image:: docs/figures/single_band_excitation.png
+.. image:: ../docs/figures/single_band_excitation.png
    :width: 300
-.. image:: docs/figures/multiband_excitation.png
+.. image:: ../docs/figures/multiband_excitation.png
    :width: 300
 
 2) Gradient Waveform Design and Optimization
@@ -132,7 +132,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
         
         pl.LinePlot(trap, title='trapezoidal gradient')
 
-.. image:: docs/figures/trap_grad.png
+.. image:: ../docs/figures/trap_grad.png
    :width: 300
 
 to more complex time-varying waveforms (e.g. spiral gradient waveform):
@@ -151,7 +151,7 @@ to more complex time-varying waveforms (e.g. spiral gradient waveform):
         
         pl.LinePlot(np.transpose(g),mode='r', title='spiral gradient (1 axis plotted)')
 
-.. image:: docs/figures/spiral_waveform.png
+.. image:: ../docs/figures/spiral_waveform.png
    :width: 300
 
 to a few tools for more advanced design (e.g. min-time-gradient designers, which ): 
