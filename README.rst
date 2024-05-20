@@ -44,7 +44,7 @@ If you want to contribute to the PulPy source code, we recommend you install it 
 	
 To run tests and contribute, we recommend installing the following packages::
 
-	pip install coverage ruff sphinx sphinx_rtd_theme black isort
+	pip install coverage ruff sphinx sphinx_rtd_theme isort
 
 and run the script ``run_tests.sh``.
 
