@@ -86,7 +86,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	pl.LinePlot(pulse,mode='r')     # plot the real component of the RF pulse
 
 .. image:: docs/figures/slr_pulse.png
-   :width: 600
+   :width: 300
 
 1c) multiband the single-band RF pulse to excite multiple slices simultaneously
 
@@ -97,6 +97,9 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	band_sep = 5*tb          # separate by 5 slice widths
 	mb_pulse = pp.rf.multiband.mb_rf(pulse, n_bands, band_sep, phs_type)
 	pl.LinePlot(mb_pulse)
+
+.. image:: docs/figures/multiband_pulse.png
+   :width: 300
 
 1d) simulate the transverse magnetization profile of both pulses. We do this by first calculating the Cayley-Klein parameters representing the rotation of the magnetization vector produced by the RF puls. We then use the relationships in Pauly et. al. to convert this to the resulting excitation magnetization. 
 
@@ -109,7 +112,10 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	pl.LinePlot(Mxy_single_band, title='single band excitation')
 	pl.LinePlot(Mxy_multi_band, title='multi-band excitation')
 
-
+.. image:: docs/figures/single_band_excitation.png
+   :width: 300
+.. image:: docs/figures/multiband_excitation.png
+   :width: 300
 
 2) Gradient Waveform Design and Optimization
 ************************************************
@@ -126,6 +132,9 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
         
         pl.LinePlot(trap, title='trapezoidal gradient')
 
+.. image:: docs/figures/trap_grad.png
+   :width: 300
+
 to more complex waveforms (e.g. spiral gradient waveform):
 
 .. code-block:: python
@@ -141,6 +150,9 @@ to more complex waveforms (e.g. spiral gradient waveform):
         g, k, t, s = pp.grad.waveform.spiral_arch(fov / R, dx, gts, gslew, gamp)
         
         pl.LinePlot(np.transpose(g),mode='r', title='spiral gradient (1 axis plotted)')
+
+.. image:: docs/figures/spiral_waveform.png
+   :width: 300
 
 to a few tools for more advanced design (e.g. min-time-gradient design): 
 
