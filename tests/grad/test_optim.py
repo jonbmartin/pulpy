@@ -8,7 +8,8 @@ import pulpy.grad.optim as optim
 
 if __name__ == "__main__":
     unittest.main()
-    
+
+
 class TestTrajGradOptim(unittest.TestCase):
     def test_min_gradient(self):
         t = np.linspace(0, 1, 1000)
