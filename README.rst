@@ -54,12 +54,16 @@ If you make modifications and would like to update the version number across the
   bumpversion --current-version 1.8.1 size
 
 
-Usage
------------
-(TODO: JBM update usage documentation)
+Getting Started
+**********************
+To begin using `pulpy`, import the package in your Python script:
 
+```python
+import pulpy
+```
 
 Contact and Contribution
-------------------------
+*************************
+
 We welcome feedback on this project! It is a work in project, so please report bugs and issues on 
 GitHub. We also encourage you to contribute additional pulse design tools. Point of contact: jonathan.bach.martin@vumc.org. 
