@@ -122,7 +122,7 @@ def abrm_hp(rf, gamgdt, xx, dom0dt=0, b1=None):
         gamgdt (array): gradient samples in radians/(units of xx).
         xx (array): spatial locations.
         dom0dt (array): off-resonance phase in radians.
-        b1 (array): B1 at each spatial location, for each channel in rf. 
+        b1 (array): B1 at each spatial location, for each channel in rf.
             b1 * rf should have units of radians
 
     Returns:
@@ -145,7 +145,7 @@ def abrm_hp(rf, gamgdt, xx, dom0dt=0, b1=None):
         rf = rf.flatten()
 
     with device:
-        Ns = xx.shape[0] # Ns: # of spatial locs
+        Ns = xx.shape[0]  # Ns: # of spatial locs
         Nt = gamgdt.shape[0]  # Nt: # time points
 
         a = xp.ones((Ns,))
@@ -160,7 +160,7 @@ def abrm_hp(rf, gamgdt, xx, dom0dt=0, b1=None):
             if b1 is None:
                 C = xp.cos(xp.abs(rf[ii]) / 2)
                 S = 1j * xp.exp(1j * xp.angle(rf[ii])) * xp.sin(xp.abs(rf[ii]) / 2)
-            else: 
+            else:
                 b1rf = b1 @ rf[:, ii]
                 C = xp.cos(xp.abs(b1rf) / 2)
                 S = 1j * xp.exp(1j * xp.angle(b1rf)) * xp.sin(xp.abs(b1rf) / 2)
