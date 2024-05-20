@@ -29,5 +29,4 @@ jobs:
           pip install boto3
       - name: Test with unittest
         run: |
-          cd request_handler
           python -m unittest discover -s ./tests  -p 'test_*.py'
