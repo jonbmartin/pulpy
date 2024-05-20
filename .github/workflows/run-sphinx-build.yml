@@ -20,6 +20,6 @@ jobs:
       - name: Check out the repository to the runner
         uses: actions/checkout@v4  
       - name: Make the script files executable
-        run: chmod +x ./.github/workflows/run_tests.sh
+        run: chmod +x ./scripts/run_tests.sh
       - name: Run a script
         run: ./run_tests.sh
