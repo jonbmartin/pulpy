@@ -14,7 +14,7 @@ PulPy: Pulses in Python
 
 Description
 -----------
-Welcome to PulPy! PulPy is a python package for RF pulse and gradient pulse design for MRI.
+Welcome to PulPy! PulPy is a python package for RF pulse and gradient pulse design for MRI. PulPy focuses on the design of individual pulses rather than full pulse sequences (for this, see other packages, e.g. `PyPulSeq <https://github.com/imr-framework/pypulseq>`_).
 
 PulPy is the successor package to `SigPy.RF <https://github.com/jonbmartin/sigpy-rf>`_, a sub package for RF pulse
 design nested inside of the `SigPy <https://github.com/mikgroup/sigpy>`_ package for signal processing and image reconstruction.
@@ -119,7 +119,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 
 2) Gradient Waveform Design and Optimization
 ************************************************
-`pulpy` also has a variety of tools for designing gradient pulses. This ranges from simple trapezoids: 
+`pulpy` also has a variety of tools for designing gradient pulses. This ranges from simple trapezoids, the building block of many pulse sequences: 
 
 .. code-block:: python
 
@@ -135,7 +135,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 .. image:: docs/figures/trap_grad.png
    :width: 300
 
-to more complex waveforms (e.g. spiral gradient waveform):
+to more complex time-varying waveforms (e.g. spiral gradient waveform):
 
 .. code-block:: python
 
@@ -154,7 +154,7 @@ to more complex waveforms (e.g. spiral gradient waveform):
 .. image:: docs/figures/spiral_waveform.png
    :width: 300
 
-to a few tools for more advanced design (e.g. min-time-gradient design): 
+to a few tools for more advanced design (e.g. min-time-gradient designers, which ): 
 
 .. code-block:: python
 
