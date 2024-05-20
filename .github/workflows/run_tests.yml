@@ -1,0 +1,27 @@
+# This workflow will execute a shell script that runs the package's tests and builds Sphinx documentation
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Run Tests
+
+on:
+  release:
+    types: [published]
+
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./scripts
+    steps:
+      - name: Check out the repository to the runner
+        uses: actions/checkout@v4  
+      - name: Make the script files executable
+        run: chmod +x run_tests.sh
+      - name: Run a script
+        run: ./run_tests.sh
