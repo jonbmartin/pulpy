@@ -58,9 +58,9 @@ Getting Started
 **********************
 To begin using `pulpy`, import the package in your Python script:
 
-```python
+``python
 import pulpy
-```
+``
 
 Contact and Contribution
 *************************
