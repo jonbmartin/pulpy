@@ -60,7 +60,7 @@ To begin using `pulpy`, import the package in your Python script:
 
 .. code-block:: python
 
-   codeimport pulpy as pp
+   import pulpy as pp
 
 
 1) RF Pulse Design and Simulation
@@ -70,20 +70,20 @@ To begin using `pulpy`, import the package in your Python script:
 1a) define RF pulse parameters 
 
 .. code-block:: python
-
-tb = 8 		# RF pulse time-bandwidth product
-N = 512 	# number of timepoints to design
-d1 = 0.01 	# magnetization passband ripple level
-d2 = 0.01 	# magnetization stopband ripple level
-p_type = 'ex'   # RF pulse type - a 90 degree excitation pulse
-f_type = 'ls'   # filter type for SLR design - using a least squares filter
+	
+	tb = 8 		# RF pulse time-bandwidth product
+	N = 512 	# number of timepoints to design
+	d1 = 0.01 	# magnetization passband ripple level
+	d2 = 0.01 	# magnetization stopband ripple level
+	p_type = 'ex'   # RF pulse type - a 90 degree excitation pulse
+	f_type = 'ls'   # filter type for SLR design - using a least squares filter
 
 1b) design the RF pulse
 
 
 .. code-block:: python
 
-pulse = rf.slr.dzrf(N, tb, p_type, f_type, d1, d2, True)
+	pulse = rf.slr.dzrf(N, tb, p_type, f_type, d1, d2, True)
 
 Ex: Gradient Waveform Design and Optimization
 ************************************************
