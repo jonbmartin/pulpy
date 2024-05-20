@@ -771,7 +771,7 @@ def dz_recursive_rf(
         win_len = (win_fact - 1) * n
         npad = n * z_pad_fact - win_fact * n
         # blackman window?
-        window = signal.blackman(int((win_fact - 1) * n))
+        window = signal.windows.blackman(int((win_fact - 1) * n))
         # split in half; stick N ones in the middle
         window = np.concatenate(
             (
