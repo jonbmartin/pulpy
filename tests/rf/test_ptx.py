@@ -2,13 +2,12 @@ import unittest
 
 import numpy as np
 import numpy.testing as npt
-import sigpy as sp
+import sigpy.mri as mri
 from scipy.ndimage import gaussian_filter
 
 import pulpy.grad.waveform as waveform
 import pulpy.linop as linop
 import pulpy.rf.ptx as ptx
-import pulpy.sim as sim
 
 if __name__ == "__main__":
     unittest.main()
@@ -31,7 +30,7 @@ class TestPtx(unittest.TestCase):
         target = gaussian_filter(target, 1)
         target = target.astype(np.complex64)
 
-        sens = sim.birdcage_maps(sens_shape)
+        sens = mri.birdcage_maps(sens_shape)
 
         return target, sens
 
@@ -52,7 +51,7 @@ class TestPtx(unittest.TestCase):
         target[circle] = 1
         target = gaussian_filter(target, 1)
         target = target.astype(np.complex64)
-        sens = sp.mri.sim.birdcage_maps(sens_shape)
+        sens = mri.birdcage_maps(sens_shape)
 
         return target, sens
 
@@ -60,7 +59,7 @@ class TestPtx(unittest.TestCase):
         target, sens = self.problem_2d(8)
 
         # makes dim*dim*2 trajectory
-        traj = sp.mri.radial(
+        traj = mri.radial(
             (sens.shape[1], sens.shape[1], 2),
             target.shape,
             golden=True,
@@ -69,7 +68,7 @@ class TestPtx(unittest.TestCase):
         # reshape to be Nt*2 trajectory
         traj = np.reshape(traj, [traj.shape[0] * traj.shape[1], 2])
 
-        A = linop.Sense(sens, coord=traj, weights=None, ishape=target.shape).H
+        A = mri.linop.Sense(sens, coord=traj, weights=None, ishape=target.shape).H
 
         pulses = ptx.stspa(
             target,
@@ -98,7 +97,7 @@ class TestPtx(unittest.TestCase):
         # construct a trajectory
         g, k, t, s = waveform.spiral_arch(fov / R, dx, gts, gslew, gamp)
 
-        A = linop.Sense(sens, coord=k, ishape=target.shape).H
+        A = mri.linop.Sense(sens, coord=k, ishape=target.shape).H
 
         pulses = ptx.stspa(
             target,
@@ -172,7 +171,7 @@ class TestPtx(unittest.TestCase):
         k1 = k1 / dim
 
         k1 = waveform.stack_of(k1, nz, 0.1)
-        A = sp.mri.linop.Sense(sens, k1, weights=None, tseg=None, ishape=target.shape).H
+        A = mri.linop.Sense(sens, k1, weights=None, tseg=None, ishape=target.shape).H
 
         pulses = ptx.stspa(
             target,
