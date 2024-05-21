@@ -52,7 +52,7 @@ and run the script ``run_tests.sh``.
 If you make modifications and would like to update the version number across the release, run bumpversion 
 (where argument size is one of 'major', 'minor', 'patch')::
 
-  bumpversion --current-version 1.8.1 size
+  bumpversion --current-version 1.8.2 size
 
 
 Getting Started
