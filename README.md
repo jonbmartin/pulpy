@@ -1,6 +1,6 @@
 PulPy: Pulses in Python
 ===========
-![PulPy logo](/docs/figures/pulpy_logo_v2.png)
+![PulPy logo](/docs/figures/pulpy_logo_v2.png | width=100)
 
 [Source Code](https://github.com/jonbmartin/pulpy) |
 [Documentation](https://pulpy.readthedocs.io) | [Demo
