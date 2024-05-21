@@ -193,6 +193,7 @@ Documentation for PulPy is available at `ReadTheDocs <https://pulpy.readthedocs.
 
 A series of Jupyter notebooks have been developed that provide tutorials of several classes 
 of pulse design at `the demo code repository <https://github.com/jonbmartin/pulpy-tutorials>`_.
+Simply clone this repository, install Pulpy (and Jupyter notebook), and get started designing pulses! 
 
 Contact and Contribution
 *************************
