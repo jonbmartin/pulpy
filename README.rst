@@ -2,6 +2,7 @@ PulPy: Pulses in Python
 =======================
 
 .. image:: ../docs/figures/pulpy_logo_v2.png
+   :align: center
    :width: 250
    :alt: PulPy logo
 
@@ -86,6 +87,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	pl.LinePlot(pulse,mode='r')     # plot the real component of the RF pulse
 
 .. image:: ../docs/figures/slr_pulse.png
+   :align: center
    :width: 300
 
 1c) multiband the single-band RF pulse to excite multiple slices simultaneously
@@ -99,6 +101,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	pl.LinePlot(mb_pulse)
 
 .. image:: ../docs/figures/multiband_pulse.png
+   :align: center
    :width: 300
 
 1d) simulate the transverse magnetization profile of both pulses. We do this by first calculating the Cayley-Klein parameters representing the rotation of the magnetization vector produced by the RF pulse (variables 'a' and 'b'). We then use the relationships in Pauly et. al. to convert this to the resulting excitation magnetization. 
@@ -113,8 +116,10 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	pl.LinePlot(Mxy_multi_band, title='multi-band excitation')
 
 .. image:: ../docs/figures/single_band_excitation.png
+   :align: center
    :width: 300
 .. image:: ../docs/figures/multiband_excitation.png
+   :align: center
    :width: 300
 
 1e) Export the RF pulse to GE format for use in a scanner. We will compute the important parameters
@@ -142,6 +147,7 @@ then write to .i file:
         pl.LinePlot(trap, title='trapezoidal gradient')
 
 .. image:: ../docs/figures/trap_grad.png
+   :align: center
    :width: 300
 
 to more complex time-varying waveforms (e.g. spiral gradient waveform):
@@ -161,6 +167,7 @@ to more complex time-varying waveforms (e.g. spiral gradient waveform):
         pl.LinePlot(np.transpose(g),mode='r', title='spiral gradient (1 axis plotted)')
 
 .. image:: ../docs/figures/spiral_waveform.png
+   :align: center
    :width: 300
 
 to a few tools for more advanced design (e.g. min-time-gradient designers, which modifies an existing trajectory to be
