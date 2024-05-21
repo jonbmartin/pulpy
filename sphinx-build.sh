@@ -1,4 +1,3 @@
-cd ..
 echo "$PWD"
 set -e
 rm -rf docs/generated/
