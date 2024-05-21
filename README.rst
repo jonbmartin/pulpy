@@ -127,6 +127,7 @@ then write to .i file:
 
 .. code-block:: python
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 	pp.ge_rf_params(pulse, dt=4e-6)
 	pp.signa(pulse, 'slr_ex')
@@ -135,6 +136,12 @@ then write to .i file:
 	pp.ge_rf_params(pulse, dt=4e-6)   # prints out the most important GE parameters
 	pp.signa(pulse, 'slr_ex')         # writes to .i file
 >>>>>>> f69a2a8 (Update README.rst)
+=======
+
+	pp.ge_rf_params(pulse, dt=4e-6)   # prints out the most important GE parameters
+	pp.signa(pulse, 'slr_ex')         # writes to .i file
+
+>>>>>>> 63a9d3a12140c57e49daea3a10f2aef83ac95ff8
 
 2) Gradient Waveform Design and Optimization
 ************************************************
