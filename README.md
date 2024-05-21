@@ -95,7 +95,7 @@ pulse = pp.rf.slr.dzrf(N, tb, p_type, f_type, d1, d2, True)
 pl.LinePlot(pulse,mode='r')     # plot the real component of the RF pulse
 ```
 
-<img src=/docs/figures/slr_pulse.png width="400" height="300">
+<img src=/docs/figures/slr_pulse.png width="400" height="350">
 
 1c) multiband the single-band RF pulse to excite multiple slices
 simultaneously
@@ -108,7 +108,7 @@ mb_pulse = pp.rf.multiband.mb_rf(pulse, n_bands, band_sep, phs_type)
 pl.LinePlot(mb_pulse)
 ```
 
-<img src=/docs/figures/multiband_pulse.png width="400" height="300">
+<img src=/docs/figures/multiband_pulse.png width="400" height="350">
 
 1d) simulate the transverse magnetization profile of both pulses. We do
 this by first calculating the Cayley-Klein parameters representing the
@@ -125,9 +125,9 @@ pl.LinePlot(Mxy_single_band, title='single band excitation')
 pl.LinePlot(Mxy_multi_band, title='multi-band excitation')
 ```
 
-<img src=/docs/figures/single_band_excitation.png width="400" height="300">
+<img src=/docs/figures/single_band_excitation.png width="400" height="350">
 
-<img src=/docs/figures/multiband_excitation.png width="400" height="300">
+<img src=/docs/figures/multiband_excitation.png width="400" height="350">
 
 1e) Export the RF pulse to GE format for use in a scanner. We will
 compute the important parameters then write to .i file:
@@ -154,7 +154,7 @@ trap, _ = pp.grad.waveform.trap_grad(area, gmax, dgdt, dt)
 pl.LinePlot(trap, title='trapezoidal gradient')
 ```
 
-<img src=/docs/figures/trap_grad.png width="400" height="300">
+<img src=/docs/figures/trap_grad.png width="400" height="350">
 
 to more complex time-varying waveforms (e.g. spiral gradient waveform):
 
@@ -172,7 +172,7 @@ g, k, t, s = pp.grad.waveform.spiral_arch(fov / R, dx, gts, gslew, gamp)
 pl.LinePlot(np.transpose(g),mode='r', title='spiral gradient (1 axis plotted)')
 ```
 
-<img src=/docs/figures/spiral_waveform.png width="400" height="300">
+<img src=/docs/figures/spiral_waveform.png width="400" height="350">
 
 to a few tools for more advanced design (e.g. min-time-gradient
 designers, which modifies an existing trajectory to be time-efficient):
