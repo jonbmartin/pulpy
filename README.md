@@ -3,7 +3,7 @@ title: 'PulPy: Pulses in Python'
 ---
 
 ![PulPy logo](/docs/figures/pulpy_logo_v2.png){.align-center
-width="250px"}
+width=250}
 
 [Source Code](https://github.com/jonbmartin/pulpy) \|
 [Documentation](https://pulpy.readthedocs.io) \| [Demo
