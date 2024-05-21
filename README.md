@@ -3,8 +3,7 @@ PulPy: Pulses in Python
 <img src=/docs/figures/pulpy_logo_v2.png width="400" height="400">
 
 [Source Code](https://github.com/jonbmartin/pulpy) |
-[Documentation](https://pulpy.readthedocs.io) | [Demo
-Code](https://github.com/jonbmartin/pulpy-tutorials)
+[Documentation](https://pulpy.readthedocs.io) | [Tutorials](https://github.com/jonbmartin/pulpy-tutorials)
 
 [![Documentation
 Status](https://readthedocs.org/projects/pulpy/badge/?version=latest)](https://pulpy.readthedocs.io/en/latest/?badge=latest)
