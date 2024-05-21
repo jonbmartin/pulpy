@@ -17,7 +17,6 @@ import sys
 
 sys.path.insert(0, os.path.abspath(".."))
 print(f'import path = {os.path.abspath("..")}')
-import pulpy
 # -- Project information -----------------------------------------------------
 
 project = "pulpy"
