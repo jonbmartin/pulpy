@@ -49,6 +49,9 @@ extensions = [
 autosummary_generate = True
 autosummary_imported_members = True
 
+# added at suggestion of docs
+autodoc_mock_imports = ["pulpy"]
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
