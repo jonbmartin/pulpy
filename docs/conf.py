@@ -16,8 +16,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.abspath(".."))
-
-
+print(f'import path = {os.path.abspath("..")}')
 # -- Project information -----------------------------------------------------
 
 project = "pulpy"
@@ -48,6 +47,9 @@ extensions = [
 ]
 autosummary_generate = True
 autosummary_imported_members = True
+
+# added at suggestion of docs
+# autodoc_mock_imports = ["pulpy"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]

@@ -125,6 +125,7 @@ then write to .i file:
 	pp.ge_rf_params(pulse, dt=4e-6)   # prints out the most important GE parameters
 	pp.signa(pulse, 'slr_ex')         # writes to .i file
 
+
 2) Gradient Waveform Design and Optimization
 ************************************************
 `pulpy` also has a variety of tools for designing gradient pulses. This ranges from simple trapezoids, the building block of many pulse sequences: 
