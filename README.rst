@@ -168,7 +168,8 @@ to more complex time-varying waveforms (e.g. spiral gradient waveform):
 .. image:: ../docs/figures/spiral_waveform.png
    :width: 300
 
-to a few tools for more advanced design (e.g. min-time-gradient designers, which ): 
+to a few tools for more advanced design (e.g. min-time-gradient designers, which modifies an existing trajectory to be
+time-efficient): 
 
 .. code-block:: python
 
