@@ -1,22 +1,27 @@
-[build-system]
-requires = ["setuptools>61.0"]
-build-backend ="setuptools.build_meta"
-
-[project]
+[tool.poetry]
 name = "pulpy"
 version = "1.8.2"
-authors = [
-  { name="Jonathan Martin", email="jonathan.bach.martin@vumc.org" },
-]
-description = "PulPy-Pulses in Python. A package for MRI/NMR RF pulse design"
+description = "PulPy: Pulses in Python. A package for MRI RF and gradient pulse design."
+authors = ["jonbmartin <jon.bach.martin@gmail.com>"]
+license = "MIT License"
 readme = "README.md"
-requires-python = ">=3.8"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-]
 
-[project.urls]
-homepage = "https://github.com/jonbmartin/pulpy"
-repository = "https://github.com/jonbmartin/pulpy"
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = "^1.24.4"
+numba = "^0.59.1"
+PyWavelets = "^1.6.0"
+scipy = "^1.13.1"
+tqdm = "^4.66.4"
+sigpy = "^0.1.26"
+
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.5.3"
+ruff = "^0.4.8"
+Sphinx = "^7.1.2"
+sphinx-rtd-theme = "^2.0.0"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
