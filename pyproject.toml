@@ -3,8 +3,14 @@ name = "pulpy"
 version = "1.8.2"
 description = "PulPy: Pulses in Python. A package for MRI RF and gradient pulse design."
 authors = ["jonbmartin <jon.bach.martin@gmail.com>"]
-license = "MIT License"
+license = "MIT"
 readme = "README.md"
+homepage = "https://github.com/jonbmartin/pulpy"
+repository = "https://github.com/jonbmartin/pulpy"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering"
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
