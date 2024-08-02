@@ -314,19 +314,17 @@ def spiral_varden(fov, res, gts, gslew, gamp, densamp, dentrans, nl, rewinder=Fa
 
     # rewinder
     if rewinder:
-        rewx, ramppts = np.squeeze(
-            trap_grad(abs(np.real(sum(g))) * gts, gamp, gslew * 50, gts)
-        )
-        rewy, ramppts = np.squeeze(
-            trap_grad(abs(np.imag(sum(g))) * gts, gamp, gslew * 50, gts)
-        )
+        rewx, ramppts = trap_grad(abs(np.real(sum(g))) * gts, gamp, gslew * 50, gts)
+        rewy, ramppts = trap_grad(abs(np.imag(sum(g))) * gts, gamp, gslew * 50, gts)
+        
+        rewx, rewy = rewx.squeeze(), rewy.squeeze()
 
         # append rewinder gradient
         if len(rewx) > len(rewy):
             r = -np.sign(np.real(sum(g))) * rewx
             p = np.sign(np.imag(sum(g)))
             p *= 1j * np.abs(np.imag(sum(g))) / np.real(sum(g)) * rewx
-            r -= p
+            r = r - p
         else:
             p = -np.sign(np.real(sum(g)))
             p *= np.abs(np.real(sum(g)) / np.imag(sum(g))) * rewy
