@@ -156,6 +156,7 @@ def spiral_varden(fov, res, gts, gslew, gamp, densamp, dentrans, nl, rewinder=Fa
         Code and algorithm based on spiralgradlx6 from
         Doug Noll, U. of Michigan BME
     """
+    gslew /= 100 # following actually assume that gslew is in T/m/s (or G/cm/cs)
     fsgcm = gamp  # fullscale g/cm
     risetime = gamp / gslew * 10000  # us
     ts = gts  # sampling time
