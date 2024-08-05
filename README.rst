@@ -43,11 +43,8 @@ If you want to contribute to the PulPy source code, we recommend you install it 
 	cd /path/to/pulpy
 	pip install -e .
 	
-To run tests and contribute, we recommend installing the following packages::
+Tests are currently run through GitHub Actions on submission of pull requests or on commits to the main branch. 
 
-	pip install coverage ruff sphinx sphinx_rtd_theme isort
-
-and run the script ``run_tests.sh``.
 
 If you make modifications and would like to update the version number across the release, run bumpversion 
 (where argument size is one of 'major', 'minor', 'patch')::
