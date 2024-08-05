@@ -1,7 +1,7 @@
 PulPy: Pulses in Python
 =======================
 
-.. image:: ../docs/figures/pulpy_logo_v2.png
+.. image:: https://github.com/jonbmartin/pulpy/blob/master/docs/figures/pulpy_logo_v2.png
    :align: center
    :width: 250
    :alt: PulPy logo
