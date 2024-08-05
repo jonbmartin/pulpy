@@ -77,7 +77,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	pulse = pp.rf.slr.dzrf(N, tb, p_type, f_type, d1, d2, True)
 	pl.LinePlot(pulse,mode='r')     # plot the real component of the RF pulse
 
-.. image:: https://github.com/jonbmartin/pulpy/blob/master/docs/figures/slr_pulse.png
+.. image:: /docs/figures/slr_pulse.png
    :align: center
    :width: 300
 
@@ -91,7 +91,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	mb_pulse = pp.rf.multiband.mb_rf(pulse, n_bands, band_sep, phs_type)
 	pl.LinePlot(mb_pulse)
 
-.. image:: https://github.com/jonbmartin/pulpy/blob/master/docs/figures/multiband_pulse.png
+.. image:: /docs/figures/multiband_pulse.png
    :align: center
    :width: 300
 
@@ -106,10 +106,10 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	pl.LinePlot(Mxy_single_band, title='single band excitation')
 	pl.LinePlot(Mxy_multi_band, title='multi-band excitation')
 
-.. image:: https://github.com/jonbmartin/pulpy/blob/master/docs/figures/single_band_excitation.png
+.. image:: /docs/figures/single_band_excitation.png
    :align: center
    :width: 300
-.. image:: https://github.com/jonbmartin/pulpy/blob/master/docs/figures/multiband_excitation.png
+.. image:: /docs/figures/multiband_excitation.png
    :align: center
    :width: 300
 
@@ -137,7 +137,7 @@ then write to .i file:
         
         pl.LinePlot(trap, title='trapezoidal gradient')
 
-.. image:: https://github.com/jonbmartin/pulpy/blob/master/docs/figures/trap_grad.png
+.. image:: /docs/figures/trap_grad.png
    :align: center
    :width: 300
 
@@ -157,7 +157,7 @@ to more complex time-varying waveforms (e.g. spiral gradient waveform):
         
         pl.LinePlot(np.transpose(g),mode='r', title='spiral gradient (1 axis plotted)')
 
-.. image:: https://github.com/jonbmartin/pulpy/blob/master/docs/figures/spiral_waveform.png
+.. image:: /docs/figures/spiral_waveform.png
    :align: center
    :width: 300
 
