@@ -24,7 +24,7 @@ sigpy = "^0.1.26"
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.5.3"
 ruff = "^0.4.8"
-Sphinx = "^7.1.2"
+Sphinx = "^8.0.2"
 sphinx-rtd-theme = "^2.0.0"
 isort = "^5.13.2"
 
