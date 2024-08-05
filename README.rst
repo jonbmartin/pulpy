@@ -26,7 +26,7 @@ dependency and takes advantage of its' abstraction classes. This dependency will
 Installation
 ------------
 
-PulPy requires Python version >= 3.8. The core module depends on ``numba``, ``numpy``, ``sigpy``, ``PyWavelets``, ``scipy``, and ``tqdm``.
+PulPy requires Python version >= 3.9. The core module depends on ``numba``, ``numpy``, ``sigpy``, ``PyWavelets``, ``scipy``, and ``tqdm``.
 
 Via ``pip``
 ***********
