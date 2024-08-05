@@ -1,2 +1,1 @@
-import pkg_resources
-__version__ = pkg_resources.get_distribution('pulpy').version
+__version__=1.8.5
