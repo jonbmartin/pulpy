@@ -1,3 +1,2 @@
-import importlib.metadata
-
-__version__ = importlib.metadata.version(__package__ or __name__)
+>>> import pkg_resources
+>>> __version__ = pkg_resources.get_distribution('pulpy').version
