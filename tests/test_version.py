@@ -1,4 +1,5 @@
 import unittest
+import importlib.metadata
 
 from pulpy import version
 
