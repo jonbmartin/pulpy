@@ -10,6 +10,8 @@ name: Build Sphinx
 on:
   pull_request:
     branches: [dev, master]
+  push:
+    branches: [master, main]
 
 jobs:
   docs:
