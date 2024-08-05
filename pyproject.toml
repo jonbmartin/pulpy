@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pulpy"
-version = "1.8.4"
+version = "1.8.5"
 description = "PulPy: Pulses in Python. A package for MRI RF and gradient pulse design."
 authors = ["jonbmartin <jon.bach.martin@gmail.com>"]
 license = "MIT"
