@@ -46,12 +46,6 @@ If you want to contribute to the PulPy source code, we recommend you install it 
 Tests are currently run through GitHub Actions on submission of pull requests or on commits to the main branch. 
 
 
-If you make modifications and would like to update the version number across the release, run bumpversion 
-(where argument size is one of 'major', 'minor', 'patch')::
-
-  bumpversion --current-version 1.8.2 size
-
-
 Getting Started
 **********************
 To begin using `pulpy`, import the package in your Python script. For demo purposes, we'll also import the SigPy package's plotting functions:
