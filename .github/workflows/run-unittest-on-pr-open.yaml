@@ -6,6 +6,8 @@ name: ci-python-unittest
 on:
   pull_request:
     branches: [dev, master]
+  push:
+    branches: [master]
 
 jobs:
   build:
