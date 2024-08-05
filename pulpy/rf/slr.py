@@ -161,7 +161,7 @@ def dzmp(n=64, tb=4, d1=0.01, d2=0.01):
     m = [1, 0]
     w = [1, 2 * d1 / (0.5 * d2 * d2)]
 
-    hl = signal.remez(n2, f, m, w)
+    hl = signal.remez(n2, f, m, weight=w)
 
     h = fmp(hl)
 
@@ -189,7 +189,7 @@ def dzlp(n=64, tb=4, d1=0.01, d2=0.01):
     m = [1, 0]
     w = [1, d1 / d2]
 
-    h = signal.remez(n, f, m, w)
+    h = signal.remez(n, f, m, weight=w)
 
     return h
 
