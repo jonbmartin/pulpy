@@ -1,3 +1,4 @@
+pip install Sphinx==8.0.2
 cd ..
 echo "$PWD"
 set -e
