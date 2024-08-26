@@ -1,7 +1,7 @@
 PulPy: Pulses in Python
 =======================
 
-.. image:: ../docs/figures/pulpy_logo_v2.png
+.. image:: /docs/figures/pulpy_logo_v2.png
    :align: center
    :width: 250
    :alt: PulPy logo
@@ -26,7 +26,7 @@ dependency and takes advantage of its' abstraction classes. This dependency will
 Installation
 ------------
 
-PulPy requires Python version >= 3.8. The core module depends on ``numba``, ``numpy``, ``sigpy``, ``PyWavelets``, ``scipy``, and ``tqdm``.
+PulPy requires Python version >= 3.9 and has been tested through 3.12. The core module depends on ``numba``, ``numpy``, ``sigpy``, ``PyWavelets``, ``scipy``, and ``tqdm``.
 
 Via ``pip``
 ***********
@@ -43,16 +43,7 @@ If you want to contribute to the PulPy source code, we recommend you install it 
 	cd /path/to/pulpy
 	pip install -e .
 	
-To run tests and contribute, we recommend installing the following packages::
-
-	pip install coverage ruff sphinx sphinx_rtd_theme isort
-
-and run the script ``run_tests.sh``.
-
-If you make modifications and would like to update the version number across the release, run bumpversion 
-(where argument size is one of 'major', 'minor', 'patch')::
-
-  bumpversion --current-version 1.8.2 size
+Tests are currently run through GitHub Actions on submission of pull requests or on commits to the main branch. 
 
 
 Getting Started
@@ -86,7 +77,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	pulse = pp.rf.slr.dzrf(N, tb, p_type, f_type, d1, d2, True)
 	pl.LinePlot(pulse,mode='r')     # plot the real component of the RF pulse
 
-.. image:: ../docs/figures/slr_pulse.png
+.. image:: /docs/figures/slr_pulse.png
    :align: center
    :width: 300
 
@@ -100,7 +91,7 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	mb_pulse = pp.rf.multiband.mb_rf(pulse, n_bands, band_sep, phs_type)
 	pl.LinePlot(mb_pulse)
 
-.. image:: ../docs/figures/multiband_pulse.png
+.. image:: /docs/figures/multiband_pulse.png
    :align: center
    :width: 300
 
@@ -115,10 +106,10 @@ To begin using `pulpy`, import the package in your Python script. For demo purpo
 	pl.LinePlot(Mxy_single_band, title='single band excitation')
 	pl.LinePlot(Mxy_multi_band, title='multi-band excitation')
 
-.. image:: ../docs/figures/single_band_excitation.png
+.. image:: /docs/figures/single_band_excitation.png
    :align: center
    :width: 300
-.. image:: ../docs/figures/multiband_excitation.png
+.. image:: /docs/figures/multiband_excitation.png
    :align: center
    :width: 300
 
@@ -146,7 +137,7 @@ then write to .i file:
         
         pl.LinePlot(trap, title='trapezoidal gradient')
 
-.. image:: ../docs/figures/trap_grad.png
+.. image:: /docs/figures/trap_grad.png
    :align: center
    :width: 300
 
@@ -166,7 +157,7 @@ to more complex time-varying waveforms (e.g. spiral gradient waveform):
         
         pl.LinePlot(np.transpose(g),mode='r', title='spiral gradient (1 axis plotted)')
 
-.. image:: ../docs/figures/spiral_waveform.png
+.. image:: /docs/figures/spiral_waveform.png
    :align: center
    :width: 300
 
