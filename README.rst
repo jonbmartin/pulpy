@@ -42,6 +42,8 @@ If you want to contribute to the PulPy source code, we recommend you install it 
 
 	cd /path/to/pulpy
 	pip install -e .
+
+An example backend that supports this editable install is: pip==24.2, setuptools==75.1.0, wheel==0.44.0. 
 	
 Tests are currently run through GitHub Actions on submission of pull requests or on commits to the main branch. 
 
