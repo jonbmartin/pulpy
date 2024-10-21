@@ -26,19 +26,19 @@ authors:
     equal-contrib: false
     affiliation: 4
   - name: William A. Grissom
+    orcid: 0000-0002-3289-1827
     corresponding: true # (This is how to denote the corresponding author)
-    affiliation: 5
+    affiliation: 3
 affiliations:
  - name: Vanderbilt University Institute of Imaging Science, Vanderbilt University Medical Center, Nashville, TN, USA
    index: 1
  - name: Department of Biomedical Engineering, Yale University, New Haven, CT, USA
    index: 2
- - name: Department of Biomedical Engineering, Vanderbilt University, Nashville, TN, USA
+ - name: Department of Biomedical Engineering, Case Western Reserve University, Cleveland, OH, USA
    index: 3
  - name: Department of Medical Physics and Radiology, University of Wisconsin School of Medicine and Public Health, Madison, WI, USA
    index: 4
- - name: Department of Biomedical Engineering, Case Western Reserve University, Cleveland, OH, USA
-   index: 5
+
 date: 26 Mar 2023
 bibliography: paper.bib
 
