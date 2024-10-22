@@ -79,7 +79,7 @@ novel techniques and the comparison of approaches, similar to how BART [@Uecker2
 MRI pulse design tools. We call this new package PulPy, short for Pulses in Python. 
 
 
-![Example RF and gradient waveforms that PulPy can produce. Top left: 4-channel spokes RF pulse. Bottom left: associated 3-axis spokes gradient waveforms. Top right: PINS excitation RF pulse. Bottom right: associated slice-axis gradient \label{fig:pulses_demo}](pulpy_demo.png){ width=90% }
+![Example RF and gradient waveforms that PulPy can produce. Top left: 4-channel spokes RF pulse. Bottom left: associated 3-axis spokes gradient waveforms. Top right: PINS excitation RF pulse. Bottom right: associated slice-axis gradient \label{fig:pulses_demo}](pulpy_demo.png){ width=70% }
 
 # Target Audience
 
