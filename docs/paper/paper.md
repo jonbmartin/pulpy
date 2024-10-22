@@ -63,7 +63,8 @@ We present PulPy (Pulses in Python), an extensive set of open-source, Python-bas
 | linop.py             | Linear operators for pulse design e.g., [@Grissom2006]           |
 | sim.py               | 1-D/N-D/N-coil Bloch simulation e.g., [@Mansfield1982]           |
 | verse.py             | RF pulse/gradient reshaping tools                                |
-[Table 1: List of modules within PulPy and their basic functionality. Exemplary references are included.]
+
+Table: List of modules within PulPy and their basic functionality. Exemplary references are included.
 
 Preliminary development of this toolbox was presented in reference [@Martin2020a]. The pulse design tools were initially implemented as a sub-package in the SigPy Python package for signal processing and image reconstruction [@Ong2019]. PulPy migrates those tools into a pulse design specific package, with SigPy as an external dependency. PulPy has been streamlined and expanded to include a larger collection of RF and gradient pulse design methods from the literature, as well as additional utility tools for I/O, pulse reshaping, and experimental B$_1^+$-selective pulse design algorithms. The toolbox has proved useful for prototyping novel pulse design algorithms, enabling the publication of Reference [@Martin2022] by the authors and several works from other groups [@Shin2021, @Wu2023]. Figure \ref{fig:pulses_demo} shows an example of RF and gradient waveforms produced by PulPy.
 
