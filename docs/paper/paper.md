@@ -30,13 +30,13 @@ authors:
     corresponding: true # (This is how to denote the corresponding author)
     affiliation: 3
 affiliations:
- - name: Vanderbilt University Institute of Imaging Science, Vanderbilt University Medical Center, Nashville, TN, USA
+ - name: Vanderbilt University Institute of Imaging Science, Vanderbilt University Medical Center, Nashville, United States of America
    index: 1
- - name: Department of Biomedical Engineering, Yale University, New Haven, CT, USA
+ - name: Department of Biomedical Engineering, Yale University, New Haven, United States of America
    index: 2
- - name: Department of Biomedical Engineering, Case Western Reserve University, Cleveland, OH, USA
+ - name: Department of Biomedical Engineering, Case Western Reserve University, Cleveland, United States of America
    index: 3
- - name: Department of Medical Physics and Radiology, University of Wisconsin School of Medicine and Public Health, Madison, WI, USA
+ - name: Department of Medical Physics and Radiology, University of Wisconsin School of Medicine and Public Health, Madison, United States of America
    index: 4
 
 date: 26 Mar 2023
