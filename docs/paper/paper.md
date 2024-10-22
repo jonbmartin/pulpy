@@ -49,19 +49,19 @@ We present PulPy (Pulses in Python), an extensive set of open-source, Python-bas
 
 | Module               | Description                                                      |
 |:--------------------:|:----------------------------------------------------------------:|
-| .rf.adiabatic.py     | Adiabatic/frequency-swept RF pulses (e.g., [@Garwood2001])        |
-| .rf.b1sel.py         | B1-selective pulses (e.g., [@Martin2022])                         |
-| .rf.multiband.py     | Pulses for simultaneous multi-slice (e.g., [@Norris2011])         |
-| .rf.optcont.py       | Large tip angle optimal control design (e.g., [@Connolly1986])    |
-| .rf.ptx.py           | parallel transmit pulse designers (e.g., [@Grissom2006])          |
-| .rf.shim.py          | parallel transmit RF shimming (e.g., [@Mao2006])                  |               
-| .rf.slr.py           | Conventional SLR and variations (e.g., [@Pauly1991])              |
+| .rf.adiabatic.py     | Adiabatic/frequency-swept RF pulses e.g., [@Garwood2001]         |
+| .rf.b1sel.py         | B1-selective pulses e.g., [@Martin2022]                          |
+| .rf.multiband.py     | Pulses for simultaneous multi-slice e.g., [@Norris2011]          |
+| .rf.optcont.py       | Large tip angle optimal control design e.g., [@Connolly1986]     |
+| .rf.ptx.py           | parallel transmit pulse designers e.g., [@Grissom2006]           |
+| .rf.shim.py          | parallel transmit RF shimming e.g., [@Mao2006]                   |               
+| .rf.slr.py           | Conventional SLR and variations e.g., [@Pauly1991]               |
 | .rf.util.py          | RF pulse design utilities                                        |
-| .grad.waveform.py    | Gradient and trajectory designers (e.g., [@Kim2003])              |
-| .grad.optim.py       | Gradient and trajectory optimization (e.g., [@Lustig2008])        |
+| .grad.waveform.py    | Gradient and trajectory designers e.g., [@Kim2003]               |
+| .grad.optim.py       | Gradient and trajectory optimization e.g., [@Lustig2008]         |
 | io.py                | Vendor-specific scanner input/output                             |
-| linop.py             | Linear operators for pulse design (e.g., [@Grissom2006])          |
-| sim.py               | 1-D/N-D/N-coil Bloch simulation (e.g., [@Mansfield1982])          |
+| linop.py             | Linear operators for pulse design e.g., [@Grissom2006]           |
+| sim.py               | 1-D/N-D/N-coil Bloch simulation e.g., [@Mansfield1982]           |
 | verse.py             | RF pulse/gradient reshaping tools                                |
 
 Preliminary development of this toolbox was presented in reference [@Martin2020a]. The pulse design tools were initially implemented as a sub-package in the SigPy Python package for signal processing and image reconstruction [@Ong2019]. PulPy migrates those tools into a pulse design specific package, with SigPy as an external dependency. PulPy has been streamlined and expanded to include a larger collection of RF and gradient pulse design methods from the literature, as well as additional utility tools for I/O, pulse reshaping, and experimental B$_1^+$-selective pulse design algorithms. The toolbox has proved useful for prototyping novel pulse design algorithms, enabling the publication of Reference [@Martin2022] by the authors and several works from other groups [@Shin2021, @Wu2023]. Figure \ref{pulses_demo} shows an example of RF and gradient waveforms produced by PulPy.
@@ -86,7 +86,7 @@ being increasingly explored [@Radhakrishna2023; @Wang2022]; with the RF pulse an
 provided, the PulPy package could facilitate this research. 
 
 
-Reproducibility and standardization are critical needs in MRI , and any method of reducing methodological variability is desirable. We believe that having centralized references for RF and gradient pulses will help promote consistency between studies by providing common code sources for the most widely used RF and gradient pulses. PulPy's predecessor toolbox, SigPy.RF, also served as a hands-on teaching aid for researchers and students (for example, see the educational ISMRM tutorial associated with [@Martin2020a]). This is a role that the PulPy toolbox will continue to fill. We have developed [several tutorials](https://github.com/jonbmartin/pulpy-tutorials), which are accessible to a wide audience with minimal prior MRI knowledge. 
+Reproducibility and standardization are critical needs in MRI , and any method of reducing methodological variability is desirable. We believe that having centralized references for RF and gradient pulses will help promote consistency between studies by providing common code sources for the most widely used RF and gradient pulses. PulPy's predecessor toolbox, SigPy.RF, also served as a hands-on teaching aid for researchers and students. An example is the educational ISMRM tutorial associated with SigPy.RF [@Martin2020a]. This is a role that the PulPy toolbox will continue to fill. We have developed [several tutorials](https://github.com/jonbmartin/pulpy-tutorials), which are accessible to a wide audience with minimal prior MRI knowledge. 
 
 # Availability and Use
 
