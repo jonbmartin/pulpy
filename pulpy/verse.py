@@ -14,11 +14,11 @@ def flatten_bsse(rfin, dtin, dtout=None):
 
     Args:
         rfin (complex vector): input BSSE RF samples
-        dtin (float): intput RF dwell time
+        dtin (float): input RF dwell time
         dtout (float): desired output RF dwell time
 
     Returns:
-        **rfout** (*array*): complex flattend BSSE waveform
+        **rfout** (*array*): complex flattened BSSE waveform
 
     """
 
