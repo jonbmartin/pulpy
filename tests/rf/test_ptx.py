@@ -117,7 +117,7 @@ class TestPtx(unittest.TestCase):
     def test_stspa_2d_explicit(self):
         target, sens = self.problem_2d(8)
         dim = target.shape[0]
-        g, k1, t, s = waveform.spiral_arch(0.24, dim, 4e-6, 200, 0.035)
+        g, k1, t, s = waveform.spiral_arch(0.24, 0.24 / dim, 4e-6, 200, 40)
         k1 = k1 / dim
 
         A = linop.PtxSpatialExplicit(sens, k1, dt=4e-6, img_shape=target.shape, b0=None)
@@ -141,7 +141,7 @@ class TestPtx(unittest.TestCase):
         target, sens = self.problem_3d(3, nz)
         dim = target.shape[0]
 
-        g, k1, t, s = waveform.spiral_arch(0.24, dim, 4e-6, 200, 0.035)
+        g, k1, t, s = waveform.spiral_arch(0.24, 0.24 / dim, 4e-6, 200, 40)
         k1 = k1 / dim
 
         k1 = waveform.stack_of(k1, nz, 0.1)
@@ -167,7 +167,7 @@ class TestPtx(unittest.TestCase):
         target, sens = self.problem_3d(3, nz)
         dim = target.shape[0]
 
-        g, k1, t, s = waveform.spiral_arch(0.24, dim, 4e-6, 200, 0.035)
+        g, k1, t, s = waveform.spiral_arch(0.24, 0.24 / dim, 4e-6, 200, 40)
         k1 = k1 / dim
 
         k1 = waveform.stack_of(k1, nz, 0.1)
