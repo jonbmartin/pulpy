@@ -13,10 +13,22 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
+import shutil
 import sys
 
 sys.path.insert(0, os.path.abspath(".."))
 print(f'import path = {os.path.abspath("..")}')
+
+# index.rst includes ../README.rst, whose images are written as
+# "/docs/figures/*.png" so that GitHub resolves them from the repository root.
+# Sphinx instead resolves a leading "/" against the source directory (docs/),
+# so mirror the figures at docs/docs/figures/ to satisfy both readers.
+_here = os.path.dirname(os.path.abspath(__file__))
+shutil.copytree(
+    os.path.join(_here, "figures"),
+    os.path.join(_here, "docs", "figures"),
+    dirs_exist_ok=True,
+)
 # -- Project information -----------------------------------------------------
 
 project = "pulpy"
@@ -73,7 +85,7 @@ language = "en"
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path .
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "docs"]
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = "sphinx"

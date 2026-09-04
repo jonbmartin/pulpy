@@ -64,3 +64,5 @@ Thumbs.db
 docs/generated
 docs/_static
 docs/_autosummary
+# figures mirrored by docs/conf.py so README image paths resolve under Sphinx
+docs/docs
