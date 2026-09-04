@@ -374,7 +374,7 @@ def spiral_arch(fov, res, gts, gslew, gamp):
         Bernstein, M.A.; King, K.F.; amd Zhou, X.J. (2004).
         Handbook of MRI Pulse Sequences. Elsevier.
     """
-
+    gslew *= 1000.0 # following code actually assumes mT/m/s
     gam = 267.522 * 1e6 / 1000  # rad/s/mT
     gambar = gam / 2 / np.pi  # Hz/mT
     N = int(fov / res)  # effective matrix size
